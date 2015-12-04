@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+ .tabs {
+    width:100%;
+    display:inline-block;
+}
+
+.individual_tab {
+    margin:0px 5px;
+    float:center;
+    padding:9px 20px;
+    display:inline-block;
+    background:#5F9F9F;
+    font-size:18px;
+    font-weight:600;
+    color: black;
+}

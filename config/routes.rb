@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root 'splash#page'
+  get '/sign_up', to: "user_session#new", as: "sign_up"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
