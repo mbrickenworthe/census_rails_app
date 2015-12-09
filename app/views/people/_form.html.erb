@@ -1,0 +1,22 @@
+
+  <%= form_for(@person) do |f|%>
+  <div>
+    <%= f.label :name%>
+    <%= f.text_field :name%>
+  </div>
+  <div>
+    <%= f.label :age%>
+    <%= f.number_field :age%>
+  </div>
+  <div>
+    <%= f.label :male%>
+    <%= f.check_box :male%>
+  </div>
+  <div>
+    <%= f.label :state%>
+    <div class="select">
+      <%= f.collection_select(:state_id, State.all, :id, :name) %>
+    </div>
+  </div>
+    <%= f.submit "Sign Up"%>
+  <%end%>

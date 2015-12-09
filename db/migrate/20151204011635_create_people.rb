@@ -5,12 +5,11 @@ class CreatePeople < ActiveRecord::Migration
       t.integer :age
       t.integer :race_number
       t.string :race
-      t.integer :state_number
       t.boolean :male
       t.boolean :female
-      t.string :state
       t.text :picture_file
       t.boolean :admin
+      t.references :state
 
       t.timestamps null: false
     end

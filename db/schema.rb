@@ -11,19 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151204013638) do
+ActiveRecord::Schema.define(version: 20151209023700) do
 
   create_table "people", force: :cascade do |t|
     t.string   "name"
     t.integer  "age"
     t.integer  "race_number"
     t.string   "race"
-    t.integer  "state_number"
     t.boolean  "male"
     t.boolean  "female"
-    t.string   "state"
     t.text     "picture_file"
     t.boolean  "admin"
+    t.integer  "state_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
@@ -36,6 +35,20 @@ ActiveRecord::Schema.define(version: 20151204013638) do
     t.integer  "person_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "races", force: :cascade do |t|
+    t.string   "race"
+    t.string   "race_number"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "state_number"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end

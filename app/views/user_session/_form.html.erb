@@ -1,1 +1,9 @@
-here.
+<form>
+  <%= form_for @person do |f|%>
+  <div>
+    <%= f.label :name%>
+    <%= f.text_field :name%>
+  </div>
+    <%= f.submit "Sign Up"%>
+  <%end%>
+</form>

@@ -1,6 +1,18 @@
+
 <h1>Welcome to the Amazing Census Data Rails App</h1>
 
 <p><%if !(logged_in?)%> Please Log In Using the Link Above to Add Your Family Members and See Your Census Data!</p>
 <%end%>
 
 <canvas id="textCanvas" width="600" height="400"></canvas>
+
+<ul class="people">
+  <li class = "person">
+    <%@people.each do |person|%>
+    <h3><%= person.name%></h3>
+    <p><%= person.age%></p>
+    <p><%= person.race%></p>
+    <p><%= person.state.name%></p>
+    <%end%>
+  </li>
+</ul>

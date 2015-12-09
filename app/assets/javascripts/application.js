@@ -18,10 +18,6 @@
 
 
 $( document ).ready(function() {
-  // var $canvas = $("canvas");
-  // var context = $canvas[0].getContext("2d");
-  // var mouseDown = false;
-  // var lastEvent;
 
     $(".animsition").animsition({
       inClass: 'fade-in',
@@ -29,38 +25,9 @@ $( document ).ready(function() {
       inDuration: 1000,
       outDuration: 3000,
     });
-
-  //   console.log( "ready!" );
-  //   $(".tabs li").click(function(){
-  //   $(this).siblings().removeClass("selected");
-  //   $(this).addClass("selected");
-  // });
-
-  //   context.beginPath();
-  //   context.moveTo(10, 10);
-  //   context.lineTo(300, 10);
-  //   context.stroke();
-
-  //   $canvas.mousedown(function(event){
-  //     lastEvent = event;
-  //     console.log(lastEvent)
-  //     mouseDown = true;
-  //   }).mousemove(function(event){
-  //     if (mouseDown) {
-  //       context.beginPath();
-  //       context.moveTo(lastEvent.offsetX, lastEvent.offsetY);
-  //       context.lineTo(event.offsetX, event.offsetY);
-  //       context.stroke();
-  //       lastEvent = event;
-  //     } 
-  //   }).mouseup(function(){
-  //     mouseDown = false;
-  //   }).mouseleave(function(){
-  //     $canvas.mouseup();
-  //   });
-
-
 });
+
+
 
 
 

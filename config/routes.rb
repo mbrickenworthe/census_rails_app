@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
   root 'splash#page'
-  get '/sign_up', to: "user_session#new", as: "sign_up"
+  get '/sign_up', to: "people#new", as: "sign_up"
+  get '/about', to: "about#index"
+
+  resources :people
+  resources :user_session
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

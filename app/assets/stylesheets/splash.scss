@@ -1,3 +1,22 @@
 // Place all the styles related to the splash controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.people {
+  color: green;
+  text-decoration: none;
+}
+
+.person {
+  text-decoration: none;
+  list-style: none;
+}
+
+.person h3 {
+  font-size: 30px;
+  background-color: blue;
+  margin:0px 0px;
+  float:center;
+  padding:9px 20px;
+  display:inline-block;
+}
