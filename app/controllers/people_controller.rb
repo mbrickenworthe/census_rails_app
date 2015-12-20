@@ -9,4 +9,14 @@ class PeopleController < ApplicationController
     binding.pry
   end
 
+  def index
+    @people = Person.where(user: User.first)
+  end
+
+  private
+
+  def person_params
+    params.require(:person).permit(:name, :age, :male, :state)
+  end
+
 end

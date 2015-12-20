@@ -10,4 +10,8 @@ class UserSessionController < ApplicationController
     binding.pry
   end
 
+  def index
+    
+  end
+
 end

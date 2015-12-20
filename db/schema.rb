@@ -11,20 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209023700) do
+ActiveRecord::Schema.define(version: 20151220155449) do
 
   create_table "people", force: :cascade do |t|
     t.string   "name"
     t.integer  "age"
     t.integer  "race_number"
     t.string   "race"
-    t.boolean  "male"
-    t.boolean  "female"
+    t.boolean  "male",         default: false
+    t.boolean  "female",       default: true
     t.text     "picture_file"
-    t.boolean  "admin"
+    t.boolean  "active_user"
     t.integer  "state_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "user_id"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "posts", force: :cascade do |t|
@@ -49,6 +50,13 @@ ActiveRecord::Schema.define(version: 20151209023700) do
     t.integer  "state_number"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

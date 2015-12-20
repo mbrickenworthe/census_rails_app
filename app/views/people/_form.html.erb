@@ -1,7 +1,7 @@
-
+<div class="person_form">
   <%= form_for(@person) do |f|%>
   <div>
-    <%= f.label :name%>
+    <%= f.label :name, "First Name"%>
     <%= f.text_field :name%>
   </div>
   <div>
@@ -18,5 +18,6 @@
       <%= f.collection_select(:state_id, State.all, :id, :name) %>
     </div>
   </div>
-    <%= f.submit "Sign Up"%>
+    <%= f.submit "Create Family Member"%>
   <%end%>
+</div>

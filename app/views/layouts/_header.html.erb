@@ -4,11 +4,12 @@
       <ul>
         <li class="individual_tab" id="home"><a href='<%= root_path%>' class= "animsition-link">Home</a></li> 
         <li class="individual_tab" id="about"><a href='<%= about_path%>' class= "animsition-link">About</a></li>
-        <li class="individual_tab " id="family">Family</li>
+        <li class="individual_tab" id="family"><a href='<%= people_path%>' class= "animsition-link">Family</a></li>
         <li class="individual_tab " id="data" >Data</li> 
         <% if logged_in? %>
-        <li class="individual_tab" id="session">Log out</li>
-        <% else%><li class="individual_tab " id="session"><%= link_to "Log In", sign_up_path%></li>
+            <li class="individual_tab" id="session">Log out</li>
+        <% else%>
+            <li class="individual_tab" id="home"><a href='<%= sign_up_path%>' class= "animsition-link">Log In</a></li> 
         <%end%> 
       </ul>
     </div>

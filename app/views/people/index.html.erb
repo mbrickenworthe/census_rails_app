@@ -1,0 +1,15 @@
+<div class="people_show">
+  <ul><%@people.each do |person|%>
+    <li class='single_person'>
+      <div id="person_name"><%= person.name%></div>
+      <div id="person_age"> <%= person.age%></div>
+      <div id="person_race"><%= person.race%></div>
+      <div id="person_sex"><%= person.sex%></div>
+      <div id="person_state"><%= person.state.name%></div>
+    </li>
+  <%end%></ul>
+</div>
+
+<button>
+  <a href='<%= new_person_path%>' class= "animsition-link">New Person</a>
+</button>
