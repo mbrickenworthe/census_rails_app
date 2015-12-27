@@ -1,16 +1,31 @@
 <div class="person_form">
   <%= form_for(@person) do |f|%>
-  <div>
-    <%= f.label :name, "First Name"%>
-    <%= f.text_field :name%>
-  </div>
+  <%if created_first_admin %>
+    <div>
+      <%= f.label :name, "Your Name"%>
+      <%= f.text_field :name%>
+    </div>
+  <% else %>
+    <div>
+      <%= f.label :name, "Family Member's Name"%>
+      <%= f.text_field :name%>
+    </div>
+  <% end %>
   <div>
     <%= f.label :age%>
     <%= f.number_field :age%>
   </div>
-  <div>
+  <div class='radio_button'>
     <%= f.label :male%>
-    <%= f.check_box :male%>
+    <%= f.radio_button :male, true %>
+    <%= f.label :female%>
+    <%= f.radio_button :male, false %>
+  </div>
+  <div>
+    <%= f.label :race%>
+    <div class="select">
+      <%= f.collection_select(:race_id, Race.all, :id, :name) %>
+  </div>
   </div>
   <div>
     <%= f.label :state%>
@@ -18,6 +33,6 @@
       <%= f.collection_select(:state_id, State.all, :id, :name) %>
     </div>
   </div>
-    <%= f.submit "Create Family Member"%>
+    <%= f.submit @text%>
   <%end%>
 </div>

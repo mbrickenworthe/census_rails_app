@@ -2,21 +2,32 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  helper_method :create_first_user_data, :created_entry
+  helper_method :create_first_user_data, :created_entry, :created_first_admin
 
   attr_accessor :created_entry
 
-  def initialize
-    @created_entry = false
+  def created_first_admin
+    if signed_in?
+      if Person.where(user_id: current_user.id).count < 1
+        true
+      else
+        false
+      end
+    else
+      false
+    end
   end
 
-  def change_entry
-    @created_entry = true
+  def created_entry
+    if signed_in?
+      Person.where(user_id: current_user.id).empty?
+    else
+      false
+    end
   end
 
   def create_first_user_data
     redirect_to new_person_path
-    change_entry
   end
 
   def logged_in?

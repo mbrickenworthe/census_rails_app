@@ -16,14 +16,12 @@ ActiveRecord::Schema.define(version: 20151227003313) do
   create_table "people", force: :cascade do |t|
     t.string   "name"
     t.integer  "age"
-    t.integer  "race_number"
-    t.string   "race"
     t.boolean  "male",         default: false
-    t.boolean  "female",       default: true
     t.text     "picture_file"
     t.boolean  "active_user"
     t.integer  "state_id"
     t.integer  "user_id"
+    t.integer  "race_id"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
   end
@@ -39,8 +37,8 @@ ActiveRecord::Schema.define(version: 20151227003313) do
   end
 
   create_table "races", force: :cascade do |t|
-    t.string   "race"
-    t.string   "race_number"
+    t.string   "name"
+    t.string   "race_letter"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
