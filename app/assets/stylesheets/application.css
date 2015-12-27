@@ -42,6 +42,17 @@
     color: black;
 }
 
+#log_out {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: red;
+}
+
+
 .selected {
     background: black;
     color: white;  

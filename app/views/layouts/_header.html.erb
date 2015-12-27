@@ -6,10 +6,11 @@
         <li class="individual_tab" id="about"><a href='<%= about_path%>' class= "animsition-link">About</a></li>
         <li class="individual_tab" id="family"><a href='<%= people_path%>' class= "animsition-link">Family</a></li>
         <li class="individual_tab " id="data" >Data</li> 
-        <% if logged_in? %>
-            <li class="individual_tab" id="session">Log out</li>
+        <% if signed_in? %>
+            <li class="individual_tab" id="log_out" ><a data-method="delete" href='<%= destroy_user_session_path%>' id= "log_out">Log Out</a></li> 
         <% else%>
-            <li class="individual_tab" id="home"><a href='<%= sign_up_path%>' class= "animsition-link">Log In</a></li> 
+            <li class="individual_tab" id="sign_in"><a href='<%= new_user_registration_path%>' class= "animsition-link">Sign Up!</a></li> 
+            <li class="individual_tab" id="log_in"><a href='<%= new_user_session_path%>' class= "animsition-link">Log In</a></li> 
         <%end%> 
       </ul>
     </div>

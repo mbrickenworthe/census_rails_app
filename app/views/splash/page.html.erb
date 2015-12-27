@@ -1,8 +1,14 @@
 
 <h1>Welcome to the Amazing Census Data Rails App</h1>
 
-<p><%if !(logged_in?)%> Please Log In Using the Link Above to Add Your Family Members and See Your Census Data!</p>
+<p><%if !(signed_in?)%> Please Log In Using the Link Above to Add Your Family Members and See Your Census Data!</p>
 <%end%>
+
+<% if signed_in? && !created_entry %>
+  <% create_first_user_data %>
+<% else %>
+<% end %>
+
 
 <canvas id="textCanvas" width="600" height="400"></canvas>
 

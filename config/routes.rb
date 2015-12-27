@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   root 'splash#page'
   get '/sign_up', to: "people#new", as: "sign_up"
   get '/about', to: "about#index"
