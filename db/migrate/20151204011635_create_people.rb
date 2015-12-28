@@ -9,6 +9,7 @@ class CreatePeople < ActiveRecord::Migration
       t.references :state
       t.references :user
       t.references :race
+      t.references :cencus_call
 
       t.timestamps null: false
     end

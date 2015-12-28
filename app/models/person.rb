@@ -3,6 +3,7 @@ class Person < ActiveRecord::Base
   belongs_to :user
   belongs_to :state
   belongs_to :race
+  belongs_to :cencus_call
 
   def sex
     if male

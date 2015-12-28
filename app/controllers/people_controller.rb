@@ -18,9 +18,10 @@ class PeopleController < ApplicationController
       sex = true
     end
     if @person.update_attributes(person_params) && @person.update_attributes(male: sex, active_user: created_first_admin, user: current_user)
+      data = CencusCall.new(@person)
+      data.make_call
       redirect_to root_path
     else
-      binding.pry
       render 'new'
     end
   end

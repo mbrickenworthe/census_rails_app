@@ -26,3 +26,11 @@ module FinalRailsProject
 
   end
 end
+
+module MyApp
+  extend Econfig::Shortcut
+
+  class Application < Rails::Application
+    
+  end
+end

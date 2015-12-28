@@ -3,10 +3,15 @@ class APICall
   attr_reader :key, :api_front, :api_back, :total_string, :people_to_test
 
   def initialize
-    @key = ENV['DEVELOPER_KEY']
-    @api_front = 'http://api.census.gov/data/2010/sf1?key=82faf50f5c81576016ec20b3438d031173085c17&get=PCT0120001'
+    
+    @api_front = 'http://api.census.gov/data/2010/sf1?key='
+    @key = MyApp.config.secret_api_key
     @total_string = nil
     @people_to_test = []
+  end
+
+  def making_string
+    string = api_front + key + 
   end
 
   def get_calls_data

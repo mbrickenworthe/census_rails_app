@@ -11,19 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151227003313) do
+ActiveRecord::Schema.define(version: 20151228001955) do
+
+  create_table "cencus_calls", force: :cascade do |t|
+    t.string   "call"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "people", force: :cascade do |t|
     t.string   "name"
     t.integer  "age"
-    t.boolean  "male",         default: false
+    t.boolean  "male",           default: false
     t.text     "picture_file"
     t.boolean  "active_user"
     t.integer  "state_id"
     t.integer  "user_id"
     t.integer  "race_id"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.integer  "cencus_call_id"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "posts", force: :cascade do |t|
@@ -45,7 +52,7 @@ ActiveRecord::Schema.define(version: 20151227003313) do
 
   create_table "states", force: :cascade do |t|
     t.string   "name"
-    t.integer  "state_number"
+    t.string   "state_number"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
