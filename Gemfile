@@ -18,6 +18,8 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem 'devise'
 
+# This gem is so that I can have environment variables and be able to use them with my API
+# the other code for this is stored in config/application.rb
 gem 'econfig', require: "econfig/rails"
 
 # Use jquery as the JavaScript library
