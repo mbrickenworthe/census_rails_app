@@ -1,8 +1,9 @@
-class CencusCall < ActiveRecord::Base
+class CencusCall
 
 attr_reader :person, :api_front, :api_back, :api_post_key, :key, :api_gender_number, :api_race, :api_gender_age_number
 
   def initialize(person_object)
+    binding.pry
     @api_front =  "http://api.census.gov/data/2010/sf1?key="
     @key = MyApp.config.secret_api_key
     @api_post_key = "&get=PCT0120001" 
@@ -30,18 +31,24 @@ attr_reader :person, :api_front, :api_back, :api_post_key, :key, :api_gender_num
     end
   end
 
+  def call_data
+    make_call
+  end
+
   def make_string
     string = api_front + key + api_post_key + combine_api_methods + api_back + person.state.state_number
   end
 
   def combine_api_methods
-    total_gender_population + total_gender_by_race + total_gender_by_age + total_gender_by_age_and_race
+    total_gender_population + 
+    total_gender_by_race + 
+    total_gender_by_age + 
+    total_gender_by_age_and_race
   end
 
   def make_call
     call = RestClient.get(make_string)
     parsed_call = JSON.parse(call)
-    binding.pry
   end
 
   def total_gender_population

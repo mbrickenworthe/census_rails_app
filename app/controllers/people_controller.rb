@@ -18,8 +18,8 @@ class PeopleController < ApplicationController
       sex = true
     end
     if @person.update_attributes(person_params) && @person.update_attributes(male: sex, active_user: created_first_admin, user: current_user)
-      data = CencusCall.new(@person)
-      data.make_call
+      cencus = CencusCall.new(@person)
+      PersonDatum.create(json_hash: cencus.call_data, person: @person)
       redirect_to root_path
     else
       render 'new'

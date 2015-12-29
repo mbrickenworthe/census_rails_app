@@ -11,13 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151228001955) do
-
-  create_table "cencus_calls", force: :cascade do |t|
-    t.string   "call"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20151229000519) do
 
   create_table "people", force: :cascade do |t|
     t.string   "name"
@@ -31,6 +25,19 @@ ActiveRecord::Schema.define(version: 20151228001955) do
     t.integer  "cencus_call_id"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+  end
+
+  create_table "person_data", force: :cascade do |t|
+    t.text     "json_hash"
+    t.integer  "state_pop"
+    t.integer  "age_pop"
+    t.integer  "gender_pop"
+    t.integer  "gender_race_pop"
+    t.integer  "gender_age_pop"
+    t.integer  "gender_age_and_race_pop"
+    t.integer  "person_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "posts", force: :cascade do |t|
