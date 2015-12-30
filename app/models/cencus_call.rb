@@ -3,7 +3,6 @@ class CencusCall
 attr_reader :person, :api_front, :api_back, :api_post_key, :key, :api_gender_number, :api_race, :api_gender_age_number
 
   def initialize(person_object)
-    binding.pry
     @api_front =  "http://api.census.gov/data/2010/sf1?key="
     @key = MyApp.config.secret_api_key
     @api_post_key = "&get=PCT0120001" 

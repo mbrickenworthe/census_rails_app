@@ -13,4 +13,10 @@ class PersonDatum < ActiveRecord::Base
     self.gender_age_and_race_pop = parsed_call[1][4]
   end
 
+  def person_per_sq_miles
+    milage = person.state.land_area.to_f / gender_age_and_race_pop.to_f 
+    milage.round(2)
+  end
+
+
 end

@@ -180,6 +180,7 @@ DEPENDENCIES
   econfig
   jbuilder (~> 2.0)
   jquery-rails
+  nokogiri
   pry
   rails (= 4.2.5)
   rest-client
