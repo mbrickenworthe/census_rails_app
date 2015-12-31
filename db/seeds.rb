@@ -14,7 +14,7 @@ user = User.create(name: "Admin", email: "a@a.a", password: "Password12", passwo
 
 aziz = Person.create(name: "Aziz", age: 32, race: Race.find_by(name: "Asian"), male: true, active_user: false, state: State.find_by(name: "South Carolina"), user: User.find_by(name: "Adam W"))
 
-sarah = Person.create(name: "Sarah", age: 51, race: Race.find_by(name: "White"), male: false, active_user: false, state: State.find_by(name: "Alaska"), user: User.find_by(name: "Adam W"))
+sarah = Person.create(name: "Sarah", age: 51, race: Race.find_by(name: "white"), male: false, active_user: false, state: State.find_by(name: "Alaska"), user: User.find_by(name: "Adam W"))
 
 # These lines of code are using Nokogiri to add the land_area to each of the states cause I didn't want to do it by hand.
 
