@@ -38,11 +38,72 @@
 </div>
 
 <script type="text/javascript">
-  handler = Gmaps.build('Google');
+  var handler = Gmaps.build('Google');
   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
     markers = handler.addMarkers(<%=raw @hash.to_json %>);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds(); 
-    handler.getMap().setZoom(6);
+    handler.addCircles(<%=raw @circle_hash.to_json%>)
+    var handler2 = Gmaps.build('Google').places.PlacesService(handler);
+    handler2.places.PlaceSearchRequest({
+      location: {lng: -95, lat: 45,},
+      radius: 500,
+      types: ['store']
+    }, console.log("Hey there!"));
+    //handler.getMap().setZoom(6);
   });
+
+  var handler2 = Gmaps.build('Google')
+    handler2.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      var handler3 = handler2.places.PlacesService(handler);
+      handler3.places.PlaceSearchRequest({
+        location: {lng: -95, lat: 45,},
+        radius: 500,
+        types: ['store']
+      }, console.log("Hey there!"));
+    });
+</script>
+
+<script type="text/javascript">
+var map;
+var infowindow;
+
+function initMap() {
+  var pyrmont = {lat: -33.867, lng: 151.195};
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: pyrmont,
+    zoom: 15
+  });
+
+  infowindow = new google.maps.InfoWindow();
+
+  var service = new google.maps.places.PlacesService(map);
+  service.nearbySearch({
+    location: pyrmont,
+    radius: 500,
+    types: ['store']
+  }, callback);
+}
+
+function callback(results, status) {
+  if (status === google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      createMarker(results[i]);
+    }
+  }
+}
+
+function createMarker(place) {
+  var placeLoc = place.geometry.location;
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location
+  });
+
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setContent(place.name);
+    infowindow.open(map, this);
+  });
+}
 </script>

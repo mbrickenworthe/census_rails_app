@@ -1,4 +1,9 @@
-
+<% content_for :page_styles do %>
+  <%= stylesheet_link_tag    'splash', media: 'all', 'data-turbolinks-track' => true %>
+<%end%>
+<% content_for :javascript_styles do %>
+  <%=javascript_include_tag 'splash', 'data-turbolinks-track' => true %>
+<%end%>
 <h1>Welcome to the Amazing Census Data Rails App</h1>
 
 <p><%if !(signed_in?)%> Please Log In Using the Link Above to Add Your Family Members and See Your Census Data!</p>
@@ -19,6 +24,10 @@
     <p><%= person.age%></p>
     <p><%= person.race.name%></p>
     <p><%= person.address_string%></p>
+    <div class="picture">
+      
+      <%= image_tag(person.picture_file)%>
+    </div>
     <%end%>
   </li>
 </ul>

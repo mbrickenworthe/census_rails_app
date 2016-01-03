@@ -11,7 +11,6 @@
  * file per style scope.
  * 
  *= require_tree ../stylesheets/animsition/.
- *= require_tree .
  *= require_self
 
  */
@@ -49,18 +48,13 @@
 
 a:hover {
     text-decoration: none;
-    color: red;
+    color: blue;
 }
 
 
 .selected {
     background: black;
     color: white;  
-}
-
-canvas {
-    background: red;
-    cursor: pointer;
 }
 
 select {
@@ -82,5 +76,13 @@ select {
    background: url(new_arrow.png) no-repeat right #ddd;
    border: 1px solid #ccc;
    }
+
+.person_submit_button {
+    margin:0px 5px;
+    float:center;
+    padding:9px 20px;
+    display:inline-block;
+    background:#5F9F9F;
+  }
 
 

@@ -12,9 +12,9 @@ races = Race.create([{name: "white", race_letter: "A"}, {name: "black", race_let
 
 user = User.create(name: "Admin", email: "a@a.a", password: "Password12", password_confirmation: "Password12")
 
-aziz = Person.create(name: "Aziz", age: 32, race: Race.find_by(name: "Asian"), male: true, active_user: false, state: State.find_by(name: "South Carolina"), user: User.find_by(name: "Adam W"), city: "Charleston")
+aziz = Person.create(name: "Aziz", age: 32, race: Race.find_by(name: "Asian"), male: true, active_user: false, state: State.find_by(name: "South Carolina"), user: User.find_by(name: "Adam W"), city: "Charleston", picture_file: File.open('db/seed_pictures/aziz_pic.jpg'))
 
-sarah = Person.create(name: "Sarah", age: 51, race: Race.find_by(name: "white"), male: false, active_user: false, state: State.find_by(name: "Alaska"), user: User.find_by(name: "Adam W"), city: "Juneau")
+sarah = Person.create(name: "Sarah", age: 51, race: Race.find_by(name: "white"), male: false, active_user: false, state: State.find_by(name: "Alaska"), user: User.find_by(name: "Adam W"), city: "Juneau", picture_file: 'db/seed_pictures/sarah_pic.jpg')
 
 # These lines of code are using Nokogiri to add the land_area to each of the states cause I didn't want to do it by hand.
 

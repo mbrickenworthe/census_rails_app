@@ -18,5 +18,9 @@ class PersonDatum < ActiveRecord::Base
     milage.round(2)
   end
 
+  def sq_miles_to_meters
+    person_per_sq_miles * 1609.34
+  end
+
 
 end

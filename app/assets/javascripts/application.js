@@ -18,8 +18,6 @@
 //= require_tree ../javascripts/underscore/.
 //= require gmaps/google
 
-//= require_tree .
-
 $( document ).ready(function() {
 
     $(".animsition").animsition({

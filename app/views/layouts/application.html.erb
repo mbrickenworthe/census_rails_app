@@ -4,7 +4,10 @@
 <head>
   <title>FinalRailsProject</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= yield :page_styles%>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= yield :javascript_styles %>
+    <%= yield :javascript_event_controllers %>
   <%= csrf_meta_tags %>
 </head>
 <body class= 'animsition'>

@@ -2,7 +2,7 @@ class SplashController < ApplicationController
 
   def page
     @current_user = nil
-    @people = Person.all
+    @people = Person.where(:user => [nil, current_user])
   end
 
 
