@@ -1,13 +1,48 @@
+<script src="//maps.google.com/maps/api/js?v=3.18&sensor=false&client=&key=&libraries=geometry&language=&hl=&region="></script> 
+<script src="//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js"></script>
 
 <h1>Cencus Data for Each Person</h1>
 
 <div class='data_person'>
-<% @person_data.each do |individual_data|%>
-  <h2><%= individual_data.person.name %></h2>
-  <p><div class="data_facts">They live in <%= individual_data.person.state.name%> which has a population of <%= number_with_delimiter(individual_data.state_pop, :delimiter => ',') %>.</div></p>
-  <p><div class="data_facts">In <%= individual_data.person.state.name%> there are <%= number_with_delimiter(individual_data.gender_pop, :delimiter => ',') %> <%= individual_data.person.sex.downcase%>s.</div></p>
-  <p><div class="data_facts">Of the <%= number_with_delimiter(individual_data.state_pop, :delimiter => ',') %> people in <%= individual_data.person.state.name%>, <%= number_with_delimiter(individual_data.gender_race_pop, :delimiter => ',') %> of them are also <%= individual_data.person.race.name%> and <%= individual_data.person.sex.downcase%> and <%= number_with_delimiter(individual_data.gender_age_pop, :delimiter => ',') %> of them are also <%= individual_data.person.sex.downcase%> and <%= individual_data.person.age%>.</div></p>
-  <p><div>Combining all your data together, of the <%= number_with_delimiter(individual_data.state_pop, :delimiter => ',') %> people in <%= individual_data.person.state.name%>, <%= number_with_delimiter(individual_data.gender_age_and_race_pop, :delimiter => ',') %> of them are also a <%= individual_data.person.age%>-year-old, <%= individual_data.person.race.name%> <%= individual_data.person.sex.downcase%>.</div></p>
-  <p><div>Finally, since <%= individual_data.person.state.name%> is <%= number_with_delimiter(individual_data.person.state.land_area, :delimiter => ',') %> square miles, you would only have to walk  <%= individual_data.person_per_sq_miles%> miles, to meet another <%= individual_data.person.age%>-year-old, <%= individual_data.person.race.name%> <%= individual_data.person.sex.downcase%>.</div></p>
-  <p><div>Interesting, right!?</div></p><br>
-<%end%></div>
+  <% @person_data.each do |individual_data|%>
+    <h2><%= individual_data.person.name %></h2>
+    <p>
+      <div class="data_facts">They live in <%= individual_data.person.state.name%> which has a population of <%= number_with_delimiter(individual_data.state_pop, :delimiter => ',') %>.
+      </div>
+    </p>
+    <p>
+      <div class="data_facts">In <%= individual_data.person.state.name%> there are <%= number_with_delimiter(individual_data.gender_pop, :delimiter => ',') %> <%= individual_data.person.sex.downcase%>s.
+      </div>
+    </p>
+    <p>
+      <div class="data_facts">Of the <%= number_with_delimiter(individual_data.state_pop, :delimiter => ',') %> people in <%= individual_data.person.state.name%>, <%= number_with_delimiter(individual_data.gender_race_pop, :delimiter => ',') %> of them are also <%= individual_data.person.race.name%> and <%= individual_data.person.sex.downcase%> and <%= number_with_delimiter(individual_data.gender_age_pop, :delimiter => ',') %> of them are also <%= individual_data.person.sex.downcase%> and <%= individual_data.person.age%>.
+      </div>
+    </p>
+    <p>
+      <div>Combining all your data together, of the <%= number_with_delimiter(individual_data.state_pop, :delimiter => ',') %> people in <%= individual_data.person.state.name%>, <%= number_with_delimiter(individual_data.gender_age_and_race_pop, :delimiter => ',') %> of them are also a <%= individual_data.person.age%>-year-old, <%= individual_data.person.race.name%> <%= individual_data.person.sex.downcase%>.
+      </div>
+    </p>
+    <p>
+      <div>Finally, since <%= individual_data.person.state.name%> is <%= number_with_delimiter(individual_data.person.state.land_area, :delimiter => ',') %> square miles, you would only have to walk  <%= individual_data.person_per_sq_miles%> miles, to meet another <%= individual_data.person.age%>-year-old, <%= individual_data.person.race.name%> <%= individual_data.person.sex.downcase%>.
+      </div>
+    </p>
+    <p>
+      <div>Interesting, right!?
+      </div>
+    </p><br>
+  <%end%>
+</div>
+
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
+
+<script type="text/javascript">
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds(); 
+    handler.getMap().setZoom(6);
+  });
+</script>

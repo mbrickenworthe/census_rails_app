@@ -27,13 +27,13 @@ class PeopleController < ApplicationController
   end
 
   def index
-    @people = Person.where(user: User.first)
+    @people = Person.where(user: current_user)
   end
 
   private
 
   def person_params
-    params.require(:person).permit(:name, :male, :age, :state_id, :race_id)
+    params.require(:person).permit(:name, :male, :age, :state_id, :race_id, :city)
   end
 
 end

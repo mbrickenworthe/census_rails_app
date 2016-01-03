@@ -25,7 +25,11 @@
     <%= f.label :race%>
     <div class="select">
       <%= f.collection_select(:race_id, Race.all, :id, :name) %>
+    </div>
   </div>
+  <div>
+    <%= f.label :city%>
+    <%= f.text_field :city%>
   </div>
   <div>
     <%= f.label :state%>

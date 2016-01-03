@@ -11,13 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151230011455) do
-
-  create_table "cencus_calls", force: :cascade do |t|
-    t.string   "call"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20160102230537) do
 
   create_table "people", force: :cascade do |t|
     t.string   "name"
@@ -31,6 +25,9 @@ ActiveRecord::Schema.define(version: 20151230011455) do
     t.integer  "cencus_call_id"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+    t.float    "longitude"
+    t.float    "latitude"
+    t.string   "city"
   end
 
   create_table "person_data", force: :cascade do |t|

@@ -27,6 +27,13 @@ gem 'econfig', require: "econfig/rails"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+
+#This is a gem to help GoogleMaps onto my page.
+gem 'gmaps4rails'
+
+#This is used to get the User's location.
+gem 'geocoder'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

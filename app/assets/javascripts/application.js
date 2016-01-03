@@ -13,9 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
-//= require_tree ../javascripts/aminsition/.
 
+//= require_tree ../javascripts/aminsition/.
+//= require_tree ../javascripts/underscore/.
+//= require gmaps/google
+
+//= require_tree .
 
 $( document ).ready(function() {
 
