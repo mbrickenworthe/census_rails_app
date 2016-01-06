@@ -21,6 +21,11 @@ gem 'devise'
 gem 'nokogiri'
 
 
+gem 'bootstrap-sass'
+
+gem 'paperclip', '~> 4.3'
+
+
 # This gem is so that I can have environment variables and be able to use them with my API
 # the other code for this is stored in config/application.rb
 gem 'econfig', require: "econfig/rails"

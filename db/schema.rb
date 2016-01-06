@@ -11,23 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160102230537) do
+ActiveRecord::Schema.define(version: 20160106005406) do
 
   create_table "people", force: :cascade do |t|
     t.string   "name"
     t.integer  "age"
-    t.boolean  "male",           default: false
+    t.boolean  "male",               default: false
     t.text     "picture_file"
     t.boolean  "active_user"
     t.integer  "state_id"
     t.integer  "user_id"
     t.integer  "race_id"
     t.integer  "cencus_call_id"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.float    "longitude"
     t.float    "latitude"
     t.string   "city"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "person_data", force: :cascade do |t|
@@ -84,7 +88,6 @@ ActiveRecord::Schema.define(version: 20160102230537) do
     t.string   "last_sign_in_ip"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
