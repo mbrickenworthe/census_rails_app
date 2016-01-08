@@ -32,6 +32,7 @@
       </div>
     </div>
   <div class="right">
+  <%if signed_in? %>
     <%@family_people.each do |person|%>
         <h3><%= person.name%></h3>
         <div class="picture">
@@ -42,6 +43,7 @@
         <p><%= person.address_string%></p>
     <%end%>
     </div>
+  <%end%>
       <%if signed_in?%>
       <div class="button">
       <%= link_to "Add Family Member", new_person_path%>

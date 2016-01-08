@@ -1,16 +1,9 @@
 <div class="person_form">
   <%= form_for(@person, multipart: true) do |f|%>
-  <%if created_first_admin %>
-    <div>
-      <%= f.label :name, "Your Name"%>
+  <div>
+      <%= f.label :name, @name%>
       <%= f.text_field :name%>
-    </div>
-  <% else %>
-    <div>
-      <%= f.label :name, "Family Member's Name"%>
-      <%= f.text_field :name%>
-    </div>
-  <% end %>
+  </div>
   <div>
       <%= f.label :photo, "Picture"%>
       <%= f.file_field :photo%>
@@ -18,6 +11,9 @@
   <div>
     <%= f.label :age%>
     <%= f.number_field :age%>
+  </div>
+  <div>
+    <%= f.hidden_field :famous, :value => @famous %>
   </div>
   <div class='radio_button'>
     <%= f.label :male%>
@@ -42,7 +38,7 @@
     </div>
   </div>
   <div class="">
-    <%= f.submit @text%>
+    <%= f.submit @text %>
   </div>
     <%end%>
 </div>
