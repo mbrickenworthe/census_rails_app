@@ -14,20 +14,38 @@
 <% else %>
 <% end %>
 
-
 <canvas id="textCanvas" width="600" height="400"></canvas>
-
-<ul class="people">
-  <li class = "person">
-    <%@people.each do |person|%>
-    <h3><%= person.name%></h3>
-    <p><%= person.age%></p>
-    <p><%= person.race.name%></p>
-    <p><%= person.address_string%></p>
-    <div class="picture">
-      
-      <%= image_tag(person.picture_file)%>
+  <div class="left">
+    <div>
+      <%@famous_people.each do |person|%>
+          <h3><%= person.name%></h3>
+          <div class="picture">
+            <%= image_tag(person.photo.url(:square))%>
+          </div>
+          <p><%= person.age%></p>
+          <p><%= person.race.name%></p>
+          <p><%= person.address_string%></p>
+      <%end%>
     </div>
+      <div class="button">
+      <%= link_to "Add New Famous Person", new_famous_person_path%>
+      </div>
+    </div>
+  <div class="right">
+    <%@family_people.each do |person|%>
+        <h3><%= person.name%></h3>
+        <div class="picture">
+          <%= image_tag(person.photo.url(:square))%>
+        </div>
+        <p><%= person.age%></p>
+        <p><%= person.race.name%></p>
+        <p><%= person.address_string%></p>
     <%end%>
-  </li>
-</ul>
+    </div>
+      <%if signed_in?%>
+      <div class="button">
+      <%= link_to "Add Family Member", new_person_path%>
+      </div>
+      <%end%>
+    </div>
+  </div>

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'splash#page'
   get '/sign_up', to: "people#new", as: "sign_up"
   get '/about', to: "about#index"
+  get '/new_person', to: "people#famous_new", as: "new_famous_person"
 
   resources :people
   resources :user_session

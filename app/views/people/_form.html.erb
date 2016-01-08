@@ -1,5 +1,5 @@
 <div class="person_form">
-  <%= form_for(@person) do |f|%>
+  <%= form_for(@person, multipart: true) do |f|%>
   <%if created_first_admin %>
     <div>
       <%= f.label :name, "Your Name"%>
@@ -11,6 +11,10 @@
       <%= f.text_field :name%>
     </div>
   <% end %>
+  <div>
+      <%= f.label :photo, "Picture"%>
+      <%= f.file_field :photo%>
+    </div>
   <div>
     <%= f.label :age%>
     <%= f.number_field :age%>

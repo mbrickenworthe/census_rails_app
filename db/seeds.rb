@@ -11,10 +11,17 @@ states = State.create([{name: "Alabama", state_number: "01"}, {name: "Alaska", s
 races = Race.create([{name: "white", race_letter: "A"}, {name: "black", race_letter: "B"}, {name: "American Indian", race_letter: "C"}, {name: "Asian", race_letter: "D"}, {name: "Pacific Islander", race_letter: "E"}, {name: "Hispanic/Latino", race_letter: "H"}, {name: "another race", race_letter: "F"}, {name: "two or more races", race_letter: "G"}])
 
 user = User.create(name: "Admin", email: "a@a.a", password: "Password12", password_confirmation: "Password12")
+aziz_photo = File.open('db/seed_pictures/aziz_pic.jpg')
+aziz = Person.create(name: "Aziz", age: 32, race: Race.find_by(name: "Asian"), male: true, active_user: false, state: State.find_by(name: "South Carolina"), user: nil, city: "Charleston", photo: aziz_photo)
 
-aziz = Person.create(name: "Aziz", age: 32, race: Race.find_by(name: "Asian"), male: true, active_user: false, state: State.find_by(name: "South Carolina"), user: User.find_by(name: "Adam W"), city: "Charleston", picture_file: File.open('db/seed_pictures/aziz_pic.jpg'))
+sarah_photo = File.open('db/seed_pictures/sarah_pic.jpg')
+sarah = Person.create(name: "Sarah", age: 51, race: Race.find_by(name: "white"), male: false, active_user: false, state: State.find_by(name: "Alaska"), user: nil, city: "Juneau", photo: sarah_photo)
 
-sarah = Person.create(name: "Sarah", age: 51, race: Race.find_by(name: "white"), male: false, active_user: false, state: State.find_by(name: "Alaska"), user: User.find_by(name: "Adam W"), city: "Juneau", picture_file: 'db/seed_pictures/sarah_pic.jpg')
+
+cencus = CencusCall.new(sarah)
+PersonDatum.create(json_hash: cencus.call_data, person: sarah)
+cencus2 = CencusCall.new(aziz)
+PersonDatum.create(json_hash: cencus2.call_data, person: aziz)
 
 # These lines of code are using Nokogiri to add the land_area to each of the states cause I didn't want to do it by hand.
 

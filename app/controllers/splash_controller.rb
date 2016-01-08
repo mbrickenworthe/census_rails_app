@@ -1,8 +1,8 @@
 class SplashController < ApplicationController
 
   def page
-    @current_user = nil
-    @people = Person.where(:user => [nil, current_user])
+    @famous_people = Person.where(user: nil)
+    @family_people = Person.where(user: current_user)
   end
 
 

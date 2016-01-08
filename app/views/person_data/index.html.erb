@@ -4,7 +4,7 @@
 <h1>Cencus Data for Each Person</h1>
 
 <div class='data_person'>
-  <% @person_data.each do |individual_data|%>
+  <% @person_data_written.each do |individual_data|%>
     <h2><%= individual_data.person.name %></h2>
     <p>
       <div class="data_facts">They live in <%= individual_data.person.state.name%> which has a population of <%= number_with_delimiter(individual_data.state_pop, :delimiter => ',') %>.
@@ -52,16 +52,6 @@
     }, console.log("Hey there!"));
     //handler.getMap().setZoom(6);
   });
-
-  var handler2 = Gmaps.build('Google')
-    handler2.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-      var handler3 = handler2.places.PlacesService(handler);
-      handler3.places.PlaceSearchRequest({
-        location: {lng: -95, lat: 45,},
-        radius: 500,
-        types: ['store']
-      }, console.log("Hey there!"));
-    });
 </script>
 
 <script type="text/javascript">

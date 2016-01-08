@@ -14,13 +14,26 @@ class PersonDatum < ActiveRecord::Base
   end
 
   def person_per_sq_miles
+    devided_number = ( sq_miles / Math::PI)
+    sqrt = Math.sqrt(devided_number).round(2)
+    sqrt * 2
+  end
+
+  def person_per_sq_miles_math
     milage = person.state.land_area.to_f / gender_age_and_race_pop.to_f 
     milage.round(2)
   end
 
-  def sq_miles_to_meters
-    person_per_sq_miles * 1609.34
+  def sq_miles
+    person_per_sq_miles_math
   end
+
+  def radius_of_a_circle
+    devided_number = ( sq_miles / Math::PI)
+    sqrt = Math.sqrt(devided_number).round(2)
+    sqrt * 1609.34
+  end
+
 
 
 end

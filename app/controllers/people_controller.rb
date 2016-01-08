@@ -1,5 +1,7 @@
 class PeopleController < ApplicationController
 
+before_action :authenticate_user!
+
   def new
     if created_first_admin
       @person = Person.new(name: current_user.name)
@@ -33,7 +35,7 @@ class PeopleController < ApplicationController
   private
 
   def person_params
-    params.require(:person).permit(:name, :male, :age, :state_id, :race_id, :city)
+    params.require(:person).permit(:name, :male, :age, :state_id, :race_id, :city, :photo)
   end
 
 end
