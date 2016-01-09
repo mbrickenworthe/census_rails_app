@@ -24,20 +24,17 @@ before_action :authenticate_user!, except: [:famous_new, :create]
 
   def create
     @person = Person.new
-    if person_params[:male] == "false"
-      sex = false
-    else
-      sex = true
-    end
+    person_params[:male] == "false" ? sex = false : sex =true
     if @person.update_attributes(person_params) && @person.update_attributes(male: sex, active_user: created_first_admin, user: current_user)
       if params[:person][:famous] == "true"
         @person.update_attributes(user: nil)
       end
       cencus = CencusCall.new(@person)
       PersonDatum.create(json_hash: cencus.call_data, person: @person)
+      # @person.add_default_pic
       redirect_to root_path
     else
-      render 'new'
+      redirect_to new_person_path
     end
   end
 

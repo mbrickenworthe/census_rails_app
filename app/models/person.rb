@@ -11,8 +11,11 @@ class Person < ActiveRecord::Base
                             }
  validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 
+ validates_presence_of :name, :age, :city
+
   geocoded_by :address_string
   after_validation :geocode
+  after_create :add_default_pic
 
   def address_string
     "#{self.city}, #{self.state.name}"
@@ -24,6 +27,11 @@ class Person < ActiveRecord::Base
     else
       "Female"
     end
+  end
+
+  def add_default_pic
+    @photo ||= File.open('public/assets/photos/default.jpg')
+    self.photo_file_name == nil ? self.update_attributes(photo: @photo) : self.photo
   end
 
 end

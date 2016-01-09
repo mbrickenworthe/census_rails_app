@@ -2,10 +2,29 @@ This is the about page. Hello.
 
 Come back later for a lot better formatting and info!!
 
-<script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key="<%=@key%>"&sensor=false">
-  </script>
 <h1>Google Maps Tut</h1>
-<div id="map-container">
-  <div id="map-canvas"></div>
-</div>
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+<script type="text/javascript">
+  var map;
+  var infowindow;
+  var pyrmont = ({lat: -33.867, lng: 151.195}, {lat: -32.867, lng: 153.195}) ;
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+         var marker = new google.maps.Marker({
+            position: pyrmont,
+            map: map,
+            title: 'Hello World!'
+        });
+      }
+
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%=@key%>&callback=initMap" async defer>
+</script>
+
+
