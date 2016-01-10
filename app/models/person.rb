@@ -12,6 +12,9 @@ class Person < ActiveRecord::Base
  validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 
  validates_presence_of :name, :age, :city
+ validates :name, length: {minimum: 2}
+ validates :city, length: {minimum: 3}
+ validates :age, numericality: {greater_than_or_equal_to: 0, less_than: 105 }
 
   geocoded_by :address_string
   after_validation :geocode

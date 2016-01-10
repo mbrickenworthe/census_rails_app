@@ -34,6 +34,13 @@ class PersonDatum < ActiveRecord::Base
     sqrt * 1609.34
   end
 
+  def update_cencus_data
+    cencus = CencusCall.new(self.person)
+    self.json_hash = cencus.call_data
+    set_up
+    self
+  end
+
 
 
 end

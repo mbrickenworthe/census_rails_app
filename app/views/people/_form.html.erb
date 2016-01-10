@@ -1,3 +1,14 @@
+<%if @person.errors.any?%>
+  <div class="errors">
+    <% @person.errors.each do |attribute, message|%>
+      <div class='message'>
+        <%= "#{attribute.capitalize} #{message}"%>
+      </div>
+    <%end%>
+  </dvi>
+<%end%>
+<br>
+
 <div class="person_form">
   <%= form_for(@person, multipart: true) do |f|%>
   <div>

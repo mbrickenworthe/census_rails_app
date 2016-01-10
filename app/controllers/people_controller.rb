@@ -34,7 +34,7 @@ before_action :authenticate_user!, except: [:famous_new, :create]
       # @person.add_default_pic
       redirect_to root_path
     else
-      redirect_to new_person_path
+      render 'new'
     end
   end
 
@@ -44,6 +44,16 @@ before_action :authenticate_user!, except: [:famous_new, :create]
 
   def edit
     @person = Person.find(params[:id])
+  end
+
+  def update
+    @person = Person.find(params[:id])
+    if @person.update_attributes(person_params)
+      PersonDatum.find_by(person: @person).update_cencus_data.save
+      redirect_to person_data_path
+    else
+      render 'edit'
+    end
   end
 
   private

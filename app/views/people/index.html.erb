@@ -9,9 +9,9 @@
     </li>
     <div class="edit">
     <%if person.active_user%>
-      <%=link_to "Edit Your Record", edit_person_path(person)%>
+      <a href='<%= edit_person_path(person)%>' class= "animsition-link">Edit Yourself</a>
     <%else%>
-      <%=link_to "Edit Family Member", edit_person_path(person)%>
+      <a href='<%= edit_person_path(person)%>' class= "animsition-link">Edit Family Member</a>
     <%end%>
   </div>
   <%end%></ul>
