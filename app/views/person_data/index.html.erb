@@ -35,65 +35,15 @@
 
 <div style='width: 800px;'>
   <div id="map" style='width: 800px; height: 400px;'></div>
-</div>
 
 <script type="text/javascript">
-  var handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-    markers = handler.addMarkers(<%=raw @hash.to_json %>);
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds(); 
-    handler.addCircles(<%=raw @circle_hash.to_json%>)
-    var handler2 = Gmaps.build('Google').places.PlacesService(handler);
-    handler2.places.PlaceSearchRequest({
-      location: {lng: -95, lat: 45,},
-      radius: 500,
-      types: ['store']
-    }, console.log("Hey there!"));
-    //handler.getMap().setZoom(6);
-  });
+  var person_info_hash = <%=raw @google_hash.to_json%>;
 </script>
 
-<script type="text/javascript">
-var map;
-var infowindow;
+<% content_for :javascript_event_controllers do %>
+  <%=javascript_include_tag 'google_maps', 'data-turbolinks-track' => true %>
+<%end%>
 
-function initMap() {
-  var pyrmont = {lat: -33.867, lng: 151.195};
-
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: pyrmont,
-    zoom: 15
-  });
-
-  infowindow = new google.maps.InfoWindow();
-
-  var service = new google.maps.places.PlacesService(map);
-  service.nearbySearch({
-    location: pyrmont,
-    radius: 500,
-    types: ['store']
-  }, callback);
-}
-
-function callback(results, status) {
-  if (status === google.maps.places.PlacesServiceStatus.OK) {
-    for (var i = 0; i < results.length; i++) {
-      createMarker(results[i]);
-    }
-  }
-}
-
-function createMarker(place) {
-  var placeLoc = place.geometry.location;
-  var marker = new google.maps.Marker({
-    map: map,
-    position: place.geometry.location
-  });
-
-  google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent(place.name);
-    infowindow.open(map, this);
-  });
-}
+<script src="https://maps.googleapis.com/maps/api/js?key= 
+  AIzaSyAqS_1E4xE5Ge1J5RYknaR1suHjidlVsCs&callback=initMap&libraries=geometry,places" async defer>
 </script>

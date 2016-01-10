@@ -14,12 +14,12 @@ user = User.create(name: "Admin", email: "a@a.a", password: "Password12", passwo
 aziz_photo = File.open('db/seed_pictures/aziz_pic.jpg')
 aziz = Person.create(name: "Aziz", age: 32, race: Race.find_by(name: "Asian"), male: true, active_user: false, state: State.find_by(name: "South Carolina"), user: nil, city: "Charleston", photo: aziz_photo)
 
-sarah_photo = File.open('db/seed_pictures/sarah_pic.jpg')
-sarah = Person.create(name: "Sarah", age: 51, race: Race.find_by(name: "white"), male: false, active_user: false, state: State.find_by(name: "Alaska"), user: nil, city: "Juneau", photo: sarah_photo)
+michele_photo = File.open('db/seed_pictures/michele_pic.jpg')
+michele = Person.create(name: "Michele", age: 59, race: Race.find_by(name: "white"), male: false, active_user: false, state: State.find_by(name: "Minnesota"), user: nil, city: "St. Cloud", photo: michele_photo)
 
 
-cencus = CencusCall.new(sarah)
-PersonDatum.create(json_hash: cencus.call_data, person: sarah)
+cencus = CencusCall.new(michele)
+PersonDatum.create(json_hash: cencus.call_data, person: michele)
 cencus2 = CencusCall.new(aziz)
 PersonDatum.create(json_hash: cencus2.call_data, person: aziz)
 

@@ -7,6 +7,13 @@
       <div id="person_sex">Gender: <%= person.sex%></div>
       <div id="person_state">Location: <%= person.address_string%></div>
     </li>
+    <div class="edit">
+    <%if person.active_user%>
+      <%=link_to "Edit Your Record", edit_person_path(person)%>
+    <%else%>
+      <%=link_to "Edit Family Member", edit_person_path(person)%>
+    <%end%>
+  </div>
   <%end%></ul>
 </div>
 

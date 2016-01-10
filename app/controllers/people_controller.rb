@@ -42,6 +42,10 @@ before_action :authenticate_user!, except: [:famous_new, :create]
     @people = Person.where(user: current_user)
   end
 
+  def edit
+    @person = Person.find(params[:id])
+  end
+
   private
 
   def person_params
