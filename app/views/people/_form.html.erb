@@ -2,7 +2,7 @@
   <div class="errors">
     <% @person.errors.each do |attribute, message|%>
       <div class='message'>
-        <%= "#{attribute.capitalize} #{message}"%>
+        <strong><%= "#{attribute.capitalize} #{message}"%></strong>
       </div>
     <%end%>
   </dvi>
