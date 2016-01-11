@@ -28,20 +28,20 @@ function initMap() {
     
     mouseoverAndMouseoutEvents(markers, content, infowindow);
   }
-
-  addBarsToMap(person_info_hash, map);
+  console.log(search['query'])
+  addBarsToMap(person_info_hash, map, search['query']);
   addCirclesToMap(person_info_hash, map);
 
   
 }
 
-function addBarsToMap(hash, map){
+function addBarsToMap(hash, map, search_query){
   for (var person in hash) {
     var bar_markers = new google.maps.places.PlacesService(map);
     bar_markers.nearbySearch({
       location: hash[person].marker_location,
       radius: hash[person].radius,
-      types: ['bar']
+      types: search_query
     }, callback);
   }
 }

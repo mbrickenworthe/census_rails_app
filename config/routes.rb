@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   get '/sign_up', to: "people#new", as: "sign_up"
   get '/about', to: "about#index"
   get '/new_person', to: "people#famous_new", as: "new_famous_person"
+  delete '/people/:id', to: "people#destroy", as: "delete_person"
+  get '/google_query', to: 'person_data#google_query'
 
-  resources :people
+  resources :people, except: [:destroy]
   resources :user_session
   resources :person_data, only: [:index]
   # The priority is based upon order of creation: first created -> highest priority.

@@ -33,12 +33,36 @@
   <%end%>
 </div>
 
+<div class ="info_break">
+  <p>
+    Check out the data on the GoogleMaps. Want to meet a person of simliar race, sex and age? Statistically, all you have to do is walk outside the circle!  There's even some bars within the circle to ensure you're a unique individual whenever you go out!
+  </p>
+</div>
+<div class='google_search'>
+  Not into bars? Pick something else where you'll be statistically unique!  Search something else: 
+  <div class="search_field">
+    <%= form_tag('/google_query', method: :get) do %>
+      <%= text_field_tag(:google_query)%>
+      <%= submit_tag("Amend Search")%>
+    <%end%>
+  </div>
+</div>
 <div style='width: 800px;'>
   <div id="map" style='width: 800px; height: 400px;'></div>
 
-<script type="text/javascript">
-  var person_info_hash = <%=raw @google_hash.to_json%>;
-</script>
+<%if @search != nil%>
+  <script type="text/javascript">
+    var person_info_hash = <%=raw @google_hash.to_json%>;
+    console.log("I'm in the 'if'");
+    var search = <%=raw @search.to_json%>;
+  </script>
+<%else%>
+  <script type="text/javascript">
+    var person_info_hash = <%=raw @google_hash.to_json%>;
+    var search = {query: ['bar']};
+    console.log("I'm in the else");
+  </script>
+<%end %>
 
 <% content_for :javascript_event_controllers do %>
   <%=javascript_include_tag 'google_maps', 'data-turbolinks-track' => true %>

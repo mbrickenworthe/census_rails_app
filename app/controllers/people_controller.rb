@@ -40,6 +40,7 @@ before_action :authenticate_user!, except: [:famous_new, :create]
 
   def index
     @people = Person.where(user: current_user)
+    @delete_image = "/assets/photos/delete_icon.png"
   end
 
   def edit
@@ -54,6 +55,10 @@ before_action :authenticate_user!, except: [:famous_new, :create]
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    redirect_to root_path
   end
 
   private
