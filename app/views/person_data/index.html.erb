@@ -97,7 +97,7 @@
 <%end %>
 
 <% content_for :javascript_event_controllers do %>
-  <%=javascript_include_tag 'google_maps', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'google_maps', 'data-turbolinks-track' => true %>
 <%end%>
 
 <% custom_url = "https://maps.googleapis.com/maps/api/js?&callback=initMap&libraries=geometry,places"-%>
