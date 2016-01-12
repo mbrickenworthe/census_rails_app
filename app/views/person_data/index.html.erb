@@ -100,6 +100,8 @@
   <%=javascript_include_tag 'google_maps', 'data-turbolinks-track' => true %>
 <%end%>
 
-<script src="https://maps.googleapis.com/maps/api/js?key= 
-  AIzaSyAqS_1E4xE5Ge1J5RYknaR1suHjidlVsCs&callback=initMap&libraries=geometry,places" async defer>
+<% custom_url = "https://maps.googleapis.com/maps/api/js?key= 
+  #{ENV['GOOGLE_API_KEY']}&callback=initMap&libraries=geometry,places"-%>
+
+<script src="<%= custom_url %>" async defer>
 </script>

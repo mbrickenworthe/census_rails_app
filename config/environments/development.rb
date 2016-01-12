@@ -39,4 +39,6 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  ENV['GOOGLE_API_KEY'] = 'AIzaSyAqS_1E4xE5Ge1J5RYknaR1suHjidlVsCs'
 end
