@@ -100,7 +100,7 @@
   <%= javascript_include_tag 'google_maps', 'data-turbolinks-track' => true %>
 <%end%>
 
-<% custom_url = "https://maps.googleapis.com/maps/api/js?&callback=initMap&libraries=geometry,places"-%>
+<% custom_url = "https://maps.googleapis.com/maps/api/js?&key=#{ENV["GOOGLE_API_KEY"]}callback=initMap&libraries=geometry,places"-%>
 
 <script src="//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js"></script>
 
