@@ -7,7 +7,6 @@ function initMap() {
     center: {lat: 32.776 , lng: -79.931 },
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
-  console.log(person_info_hash["Sarah"])
 
   for (var person in person_info_hash) {
     var image = {
@@ -95,7 +94,6 @@ function mouseoverAndMouseoutEvents(markers, content, infowindow){
 }
 
 function callback(results, status) {
-  console.log(results);
   if (status === google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
       createBarMarkers(results[i]);
