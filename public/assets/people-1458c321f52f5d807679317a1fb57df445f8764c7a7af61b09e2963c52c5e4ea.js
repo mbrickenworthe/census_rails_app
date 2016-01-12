@@ -1,0 +1,1 @@
+document.getElementById("test").addEventListener("click",function(e){console.log("Hey")},!1);
