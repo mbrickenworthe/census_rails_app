@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 
-  var $canvas = $("canvas");
+  var $canvas = $(".main_canvas");
   if ($("canvas").length === 1 ) {
   var context = $canvas[0].getContext("2d");
   var mouseDown = false;
