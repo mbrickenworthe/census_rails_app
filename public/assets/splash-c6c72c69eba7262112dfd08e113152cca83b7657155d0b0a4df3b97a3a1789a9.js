@@ -1,0 +1,1 @@
+$(document).ready(function(){var o=$(".main_canvas");if(1===$("canvas").length){var e,n=o[0].getContext("2d"),t=!1;o.mousedown(function(o){e=o,console.log(e),t=!0}).mousemove(function(o){t&&(n.beginPath(),n.moveTo(e.offsetX,e.offsetY),n.lineTo(o.offsetX,o.offsetY),n.stroke(),e=o)}).mouseup(function(){t=!1}).mouseleave(function(){o.mouseup()})}});
