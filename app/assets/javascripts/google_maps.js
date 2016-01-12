@@ -2,6 +2,7 @@ var map;
 var infowindow;
 
 function initMap() {
+  debugger
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 4,
     center: {lat: 32.776 , lng: -79.931 },
