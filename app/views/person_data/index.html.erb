@@ -23,7 +23,7 @@
       </div>
     </p>
     <p>
-      <div>Finally, since <%= individual_data.person.state.name%> is <%= number_with_delimiter(individual_data.person.state.land_area, :delimiter => ',') %> square miles, you would only have to walk  <%= individual_data.person_per_sq_miles%> miles, to meet another <%= individual_data.person.age%>-year-old, <%= individual_data.person.race.name%> <%= individual_data.person.sex.downcase%>.
+      <div>Finally, since <%= individual_data.person.state.name%> is <%= number_with_delimiter(individual_data.person.state.land_area, :delimiter => ',') %> square miles, you would only have to walk  <%= individual_data.diameter_of_a_circle(individual_data.person_per_sq_miles_math(individual_data.gender_age_and_race_pop)).round(2)%> miles, to meet another <%= individual_data.person.age%>-year-old, <%= individual_data.person.race.name%> <%= individual_data.person.sex.downcase%>.
       </div>
     </p>
     <p>
@@ -35,11 +35,22 @@
 
 <div class ="info_break">
   <p>
-    Check out the data on the GoogleMaps. Want to meet a person of simliar race, sex and age? Statistically, all you have to do is walk outside the circle!  There's even some bars within the circle to ensure you're a unique individual whenever you go out!
+    Check out the data on the GoogleMaps. Want to meet a person of simliar race, sex and age? Statistically, all you have to do is walk outside the circle!
+  </p>  
+  <p>
+    <%if @search == nil%>
+      There's even some bars within the circle to ensure you're a unique individual whenever you go out!
+    <%else%>
+      There's even some <%= @search[:query][0].pluralize%> within the circle to ensure you're a unique individual whenever you go out!
+    <%end%>
   </p>
 </div>
 <div class='google_search'>
-  Not into bars? Pick something else where you'll be statistically unique!  Search something else: 
+  <%if @search == nil%>
+    Not into bars? Pick something else where you'll be statistically unique!  Search something else: 
+  <%else%>
+    Not into <%= @search[:query][0].pluralize%>? Pick something else where you'll be statistically unique!  Search something else: 
+  <%end%>
   <div class="search_field">
     <%= form_tag('/google_query', method: :get) do %>
       <%= text_field_tag(:google_query)%>
@@ -47,6 +58,23 @@
     <%end%>
   </div>
 </div>
+<ul class="circles">
+  <li>
+    The <span style="color: #FF0000" font-weight:bold>RED</span> circle is the gender, age, and race uniqueness.
+  </li>
+  <li>
+    The <span style="color: #236B8E" font-weight:bold>BLUE</span> circle is the age uniqueness.
+  </li>
+  <li>
+    The <span style="color: #FFB00F" font-weight:bold>YELLOW</span> circle is the gender and age uniqueness.
+  </li>
+  <li>
+    The <span style="color: #488214" font-weight:bold>GREEN</span> circle is the gender and race uniqueness.
+  </li>
+  <li>
+    The <span style="color: #551A8B" font-weight:bold>PURPLE</span> circle is the gender uniqueness.
+  </li>
+</ul>
 <div style='width: 800px;'>
   <div id="map" style='width: 800px; height: 400px;'></div>
 
@@ -59,6 +87,10 @@
 <%else%>
   <script type="text/javascript">
     var person_info_hash = <%=raw @google_hash.to_json%>;
+    var circle_one = <%=raw @circle_one.to_json%>;
+    var circle_two = <%=raw @circle_two.to_json%>;
+    var circle_three = <%=raw @circle_three.to_json%>;
+    var circle_four = <%=raw @circle_four.to_json%>;
     var search = {query: ['bar']};
     console.log("I'm in the else");
   </script>

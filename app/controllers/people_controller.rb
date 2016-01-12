@@ -29,8 +29,8 @@ before_action :authenticate_user!, except: [:famous_new, :create]
       if params[:person][:famous] == "true"
         @person.update_attributes(user: nil)
       end
-      cencus = CencusCall.new(@person)
-      PersonDatum.create(json_hash: cencus.call_data, person: @person)
+      census = CensusCall.new(@person)
+      PersonDatum.create(json_hash: census.call_data, person: @person)
       # @person.add_default_pic
       redirect_to root_path
     else
@@ -50,7 +50,7 @@ before_action :authenticate_user!, except: [:famous_new, :create]
   def update
     @person = Person.find(params[:id])
     if @person.update_attributes(person_params)
-      PersonDatum.find_by(person: @person).update_cencus_data.save
+      PersonDatum.find_by(person: @person).update_census_data.save
       redirect_to person_data_path
     else
       render 'edit'
@@ -58,7 +58,10 @@ before_action :authenticate_user!, except: [:famous_new, :create]
   end
 
   def destroy
-    redirect_to root_path
+    @person = Person.find(params[:id])
+    PersonDatum.find_by(person: @person).destroy
+    @person.destroy
+    redirect_to people_path
   end
 
   private

@@ -31,8 +31,11 @@ function initMap() {
   console.log(search['query'])
   addBarsToMap(person_info_hash, map, search['query']);
   addCirclesToMap(person_info_hash, map);
-
   
+  addSmallerCirclesToMap(circle_one, map);
+  addSmallerCirclesToMap(circle_two, map);
+  addSmallerCirclesToMap(circle_three, map);
+  addSmallerCirclesToMap(circle_four, map);
 }
 
 function addBarsToMap(hash, map, search_query){
@@ -57,6 +60,21 @@ function addCirclesToMap(hash, map){
       map: map,
       center: hash[person].marker_location,
       radius: hash[person].radius
+    });
+  }
+} 
+
+function addSmallerCirclesToMap(hash, map){
+  for (var person in hash) {
+    var circles = new google.maps.Circle({
+      strokeColor: hash[person].circle_color,
+      strokeOpacity: 0.9,
+      strokeWeight: 2.5,
+      fillColor: hash[person].circle_color,
+      fillOpacity: 0.05,
+      map: map,
+      center: hash[person].marker_location,
+      radius: hash[person].api_radius
     });
   }
 } 

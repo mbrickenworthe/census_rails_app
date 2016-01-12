@@ -1,4 +1,4 @@
-class CencusCall
+class CensusCall
 
 attr_reader :person, :api_front, :api_back, :api_post_key, :key, :api_gender_number, :api_race, :api_gender_age_number
 
@@ -11,27 +11,35 @@ attr_reader :person, :api_front, :api_back, :api_post_key, :key, :api_gender_num
     @api_race = person.race.race_letter
     if person.male
       @api_gender_number = "002"
-      if (person.age + 3).to_s.length == 1
-        @api_gender_age_number = "00" + (person.age + 3).to_s
-      elsif (person.age + 3).to_s.length == 2
-        @api_gender_age_number = "0" + (person.age + 3).to_s
-      else
-        @api_gender_age_number = (person.age + 3).to_s
-      end
+      @api_gender_age_number = api_male_number
     else
       @api_gender_number = "106"
-      if (person.age + 7).to_s.length == 1
-        @api_gender_age_number = "10" + (person.age + 7).to_s
-      elsif (person.age + 7).to_s.length == 2
-        @api_gender_age_number = "1" + (person.age + 7).to_s
-      else
-        @api_gender_age_number = (person.age + 7).to_s
-      end
+      @api_gender_age_number = api_female_number
     end
   end
 
   def call_data
     make_call
+  end
+
+  def api_male_number
+    if (person.age + 3).to_s.length == 1
+      number = "00" + (person.age + 3).to_s
+    elsif (person.age + 3).to_s.length == 2
+      number = "0" + (person.age + 3).to_s
+    else
+      number = (person.age + 3).to_s
+    end
+  end
+
+  def api_female_number
+    if (person.age + 7).to_s.length == 1
+      number = "10" + (person.age + 7).to_s
+    elsif (person.age + 7).to_s.length == 2
+      number = "1" + (person.age + 7).to_s
+    else
+      number = (person.age + 7).to_s
+    end
   end
 
   def make_string
@@ -42,7 +50,8 @@ attr_reader :person, :api_front, :api_back, :api_post_key, :key, :api_gender_num
     total_gender_population + 
     total_gender_by_race + 
     total_gender_by_age + 
-    total_gender_by_age_and_race
+    total_gender_by_age_and_race +
+    total_age_population
   end
 
   def make_call
@@ -52,6 +61,11 @@ attr_reader :person, :api_front, :api_back, :api_post_key, :key, :api_gender_num
 
   def total_gender_population
     ',PCT0120' + api_gender_number
+  end
+
+
+  def total_age_population
+    ',PCT0120' + api_male_number + ',PCT0120' + api_female_number
   end
 
   def total_gender_by_race

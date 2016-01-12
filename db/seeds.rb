@@ -18,10 +18,10 @@ michele_photo = File.open('db/seed_pictures/michele_pic.jpg')
 michele = Person.create(name: "Michele", age: 59, race: Race.find_by(name: "white"), male: false, active_user: false, state: State.find_by(name: "Minnesota"), user: nil, city: "St. Cloud", photo: michele_photo)
 
 
-cencus = CencusCall.new(michele)
-PersonDatum.create(json_hash: cencus.call_data, person: michele)
-cencus2 = CencusCall.new(aziz)
-PersonDatum.create(json_hash: cencus2.call_data, person: aziz)
+census = CensusCall.new(michele)
+PersonDatum.create(json_hash: census.call_data, person: michele)
+census2 = CensusCall.new(aziz)
+PersonDatum.create(json_hash: census2.call_data, person: aziz)
 
 # These lines of code are using Nokogiri to add the land_area to each of the states cause I didn't want to do it by hand.
 
