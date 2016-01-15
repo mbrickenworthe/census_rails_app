@@ -21,6 +21,8 @@ module FinalRailsProject
     # config.i18n.default_locale = :de
     config.serve_static_assets = true
     config.assets.precompile += %w( splash.css splash.js people.js google_maps.js) 
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
+    
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     # this was added w/ the devise app but nothing seems to load w/ it when I do this.

@@ -29,12 +29,12 @@
 }
 
 .left {
-    background-color: olive;
+    background-color: #97A14A;
     float: left;
     width: 45%;
 }
 
 .right {
-    background-color: Aqua;
+    background-color: #97A14A;
     margin-left: 55%;
 }

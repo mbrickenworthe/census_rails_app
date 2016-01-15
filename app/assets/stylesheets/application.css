@@ -14,8 +14,45 @@
  *= require_self
 
  */
+
+/* 
+
+5 colors are:
+  #011627 -- Dark blue
+  #0B3648 -- Blue
+  #3B6058 -- Sea Foam
+  #97A14A -- Green Yellow
+  #7B5E7B -- Lighter Purple
+
+ */
+
+@font-face {
+  font-family: 'Amble';
+  font-weight: normal;
+  font-style: normal;
+  src: url('amble.ttf')  format('truetype');
+}
+
+body {
+  font-family: "Amble";
+  background-color: #3B6058;
+  margin: 1%;
+}
+
+p {
+ color: #011627;
+}
+
+h2 {
+ color: #011627;
+}
+
+h3 {
+ color: #011627;
+}
+
 .header {
-    background: black;
+    background: #011627;
     float: center;
 }
 
@@ -24,37 +61,93 @@
     display:inline-block;
 }
 
+h1 {
+  color: #011627;
+}
+
 .individual_tab {
     margin:0px 5px;
     float:center;
     padding:9px 20px;
     display:inline-block;
-    background:#5F9F9F;
+    background: #97A14A;
     font-size:18px;
     font-weight:600;
-    color: black;
+    color: #011627;
     text-decoration: none;
 }
-
+/* Link that, thru jQuery, flips the page when you go to the next page.*/
 .animsition-link {
     text-decoration: none;
-    color: black;
+    color: #011627;
 }
 
 #log_out {
     text-decoration: none;
-    color: black;
+    color: #011627;
+}
+
+.button a {
+  border: 2px solid #011627;
+  text-decoration: none;
+  color: #97A14A;
+  background-color: #011627
 }
 
 a:hover {
     text-decoration: none;
-    color: blue;
+    color: #0B3648;
+    font-size: 26px;
+    padding: 0px;
+    height: 34px; 
+    width: 268px;
+    padding: 5px;
+    line-height: 1;
+    border: 0;
+    border-radius: 0;
+    height: 34px;
+    text-transform: 3s;
+}
+label {
+  color: #011627;
+}
+
+.field {
+  font-size: 20px;
 }
 
 
+
+input {
+  padding: 10px;
+  border: solid;
+  border-color: #011627;
+  focus: false;
+  background-color: #97A14A;
+}
+
+input[type="submit"] {
+  color: #97A14A;
+  background-color: #011627;
+  padding: 5px;
+  font-size: 18px;
+  margin: 8px;
+
+}
+
+input[type="checkbox"] {
+  background-color: #011627;
+  border: 1px;
+  font-size: 18px;
+  margin: 8px;
+  opacity: 5;
+
+}
+
 .selected {
-    background: black;
-    color: white;  
+    background: #011627;
+    color: white; 
+
 }
 
 select {
@@ -84,5 +177,45 @@ select {
     display:inline-block;
     background:#5F9F9F;
   }
+
+.button {
+  color: #0B3648;
+  text-decoration: none;
+}
+
+
+#map {
+  display: block;
+  float: center;
+  border: 5px solid #011627;
+  position: relative;
+  width: 100%;
+}
+
+
+
+.circles {
+  border: 5px solid #011627;
+  width: 40%;
+  float: center;
+}
+
+.circles li {
+  list-style-type: none;
+  background-color: #999968;
+}
+
+.right h2{
+  margin: 10px;
+}
+.right h3{
+  margin: 10px;
+}
+.right .picture{
+  margin: 10px;
+}
+.right p{
+  margin: 10px;
+}
 
 
