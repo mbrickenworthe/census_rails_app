@@ -12,6 +12,7 @@
  * 
  *= require_tree ../stylesheets/animsition/.
  *= require_self
+ *= require_tree .
 
  */
 
