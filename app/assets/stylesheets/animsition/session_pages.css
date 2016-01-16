@@ -1,0 +1,16 @@
+// Place all the styles related to the splash controller here.
+// They will automatically be included in application.css.
+/
+
+//  THIS IS EVERYTHING DEALING w/ Logging in the Out
+/*View page:
+
+Log In:  
+  app/views/devise/sessions/new
+Sign Up:
+  app/views/devise/registrations/new
+
+
+I don't really use the other pages in devise, but you could definitely find them and style them here.    
+*/
+

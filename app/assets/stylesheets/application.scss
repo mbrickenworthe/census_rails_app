@@ -10,9 +10,9 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  * 
+*= require_tree .
  *= require_tree ../stylesheets/animsition/.
  *= require_self
- *= require_tree .
 
  */
 
@@ -27,6 +27,10 @@
 
  */
 
+/* 
+The fonts are found or could be put in 
+  vender/assets/fonts
+*/
 @font-face {
   font-family: 'Amble';
   font-weight: normal;
@@ -57,36 +61,11 @@ h3 {
     float: center;
 }
 
- .tabs {
-    width:100%;
-    display:inline-block;
-}
-
 h1 {
   color: #011627;
 }
 
-.individual_tab {
-    margin:0px 5px;
-    float:center;
-    padding:9px 20px;
-    display:inline-block;
-    background: #97A14A;
-    font-size:18px;
-    font-weight:600;
-    color: #011627;
-    text-decoration: none;
-}
-/* Link that, thru jQuery, flips the page when you go to the next page.*/
-.animsition-link {
-    text-decoration: none;
-    color: #011627;
-}
-
-#log_out {
-    text-decoration: none;
-    color: #011627;
-}
+/*These are any links on all the pages.*/
 
 .button a {
   border: 2px solid #011627;
@@ -109,15 +88,36 @@ a:hover {
     height: 34px;
     text-transform: 3s;
 }
+
+/* All the dropdown select boxes in the app*/
+
+select {
+  background: transparent;
+  width: 268px;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  border-radius: 0;
+  height: 34px;
+  -webkit-appearance: none;
+}
+
+select {
+  width: 240px;
+  height: 34px;
+  overflow: hidden;
+  background: url(new_arrow.png) no-repeat right #ddd;
+  border: 1px solid #ccc;
+}
+
+/*  I think this is the label for the select boxes */
+
 label {
   color: #011627;
 }
 
-.field {
-  font-size: 20px;
-}
-
-
+/*  All the text boxes in all the forms in the app*/
 
 input {
   padding: 10px;
@@ -145,66 +145,7 @@ input[type="checkbox"] {
 
 }
 
-.selected {
-    background: #011627;
-    color: white; 
-
-}
-
-select {
-   background: transparent;
-   width: 268px;
-   padding: 5px;
-   font-size: 16px;
-   line-height: 1;
-   border: 0;
-   border-radius: 0;
-   height: 34px;
-   -webkit-appearance: none;
-   }
-
-   select {
-   width: 240px;
-   height: 34px;
-   overflow: hidden;
-   background: url(new_arrow.png) no-repeat right #ddd;
-   border: 1px solid #ccc;
-   }
-
-.person_submit_button {
-    margin:0px 5px;
-    float:center;
-    padding:9px 20px;
-    display:inline-block;
-    background:#5F9F9F;
-  }
-
-.button {
-  color: #0B3648;
-  text-decoration: none;
-}
-
-
-#map {
-  display: block;
-  float: center;
-  border: 5px solid #011627;
-  position: relative;
-  width: 100%;
-}
-
-
-
-.circles {
-  border: 5px solid #011627;
-  width: 40%;
-  float: center;
-}
-
-.circles li {
-  list-style-type: none;
-  background-color: #999968;
-}
+/* My attempt at making the right and left collumn on the first page better*/
 
 .right h2{
   margin: 10px;
@@ -218,5 +159,50 @@ select {
 .right p{
   margin: 10px;
 }
+
+
+/*   HEADER  SECTION   */
+
+/*These are the individual tabs at the top.*/
+/*This is also things that are in the header
+
+  View page:
+
+  app/views/layouts/_header
+
+*/
+
+.tabs {
+    width:100%;
+    display:inline-block;
+}
+
+.individual_tab {
+    margin:0px 5px;
+    float:center;
+    padding:9px 20px;
+    display:inline-block;
+    background: #97A14A;
+    font-size:18px;
+    font-weight:600;
+    color: #011627;
+    text-decoration: none;
+}
+
+/* Link that, thru jQuery, flips the page when you go to the next page.*/
+
+.animsition-link {
+    text-decoration: none;
+    color: #011627;
+}
+
+/* Had to */
+#log_out {
+    text-decoration: none;
+    color: #011627;
+}
+
+
+
 
 

@@ -1,6 +1,31 @@
+<% content_for :javascript_styles do %>
+  <%=javascript_include_tag 'splash', 'data-turbolinks-track' => true %>
+<%end%>
+
 <p>My app uses the US Census Data from 2010 and messes with the data. Not only does it give the user a the actual numbers that are returned, but I have then incorporated a GoogleMaps canvas onto my data page to help visualize the numbers.</p>
 
 <p>To get that data, a user can decide to either explore the data or family members or famous people.</p>
+
+<p>Checkout the coder:</p>
+<h3>Adam Winters</h3>
+<%= image_tag('/assets/photos/coder.jpg', size: "180x200", alt: "Coder")%><br>
+<a href='https://github.com/mbrickenworthe' class= "links">
+  <img alt="Github" height="24" src="/assets/photos/github.png" width="24" />
+</a>
+<a href='https://learn.co/mbrickenworthe' class= "links">
+  <img alt="Learn" height="24" src="/assets/photos/learn.png" width="24" />
+</a>
+<a href='https://teamtreehouse.com/adamw' class= "links">
+  <img alt="Treehouse" height="24" src="/assets/photos/treehouse.png" width="24" />
+</a>
+<a href='https://www.linkedin.com/in/adamrwinters' class= "links">
+  <img alt="LinkedIn" height="24" src="/assets/photos/linkedin.png" width="24" />
+</a>
+<%= mail_to "adamwinters456@gmail.com", image_tag('/assets/photos/gmail.png', size: "24x24", alt: "Gmail"), :class => "links"%>
+
+
+<h4>Also, a javascript canvas I messed around with to take notes.</h4>
+<canvas id="textCanvas" width="600" height="400" class="main_canvas"></canvas>
 
 
 
