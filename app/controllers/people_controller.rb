@@ -31,7 +31,6 @@ before_action :authenticate_user!, except: [:famous_new, :create]
       end
       census = CensusCall.new(@person)
       PersonDatum.create(json_hash: census.call_data, person: @person)
-      # @person.add_default_pic
       redirect_to root_path
     else
       render 'new'
@@ -50,7 +49,7 @@ before_action :authenticate_user!, except: [:famous_new, :create]
   def update
     @person = Person.find(params[:id])
     if @person.update_attributes(person_params)
-      PersonDatum.find_by(person: @person).update_census_data.save
+      PersonDatum.find_by(person: @person).update_uniqueness_data.save
       redirect_to person_data_path
     else
       render 'edit'

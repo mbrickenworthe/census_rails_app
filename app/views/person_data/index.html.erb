@@ -7,7 +7,8 @@
   <% @person_data_written.each do |individual_data|%>
     <h2><%= individual_data.person.name %></h2>
     <p>
-      <div class="data_facts">They live in <%= individual_data.person.state.name%> which has a population of <%= number_with_delimiter(individual_data.state_pop, :delimiter => ',') %>.
+      <div class="data_facts">
+        <%= individual_data.person.state.name%> has a population of <%= number_with_delimiter(individual_data.state_pop, :delimiter => ',') %>.
       </div>
     </p>
     <p>
@@ -19,11 +20,11 @@
       </div>
     </p>
     <p>
-      <div>Combining all your data together, of the <%= number_with_delimiter(individual_data.state_pop, :delimiter => ',') %> people in <%= individual_data.person.state.name%>, <%= number_with_delimiter(individual_data.gender_age_and_race_pop, :delimiter => ',') %> of them are also a <%= individual_data.person.age%>-year-old, <%= individual_data.person.race.name%> <%= individual_data.person.sex.downcase%>.
+      <div>Combining all the data together, of the <%= number_with_delimiter(individual_data.state_pop, :delimiter => ',') %> people in <%= individual_data.person.state.name%>, <%= number_with_delimiter(individual_data.gender_age_and_race_pop, :delimiter => ',') %> of them are also a <%= individual_data.person.age%>-year-old, <%= individual_data.person.race.name%> <%= individual_data.person.sex.downcase%>.
       </div>
     </p>
     <p>
-      <div>Finally, since <%= individual_data.person.state.name%> is <%= number_with_delimiter(individual_data.person.state.land_area, :delimiter => ',') %> square miles, you would only have to walk  <%= individual_data.diameter_of_a_circle(individual_data.person_per_sq_miles_math(individual_data.gender_age_and_race_pop)).round(2)%> miles, to meet another <%= individual_data.person.age%>-year-old, <%= individual_data.person.race.name%> <%= individual_data.person.sex.downcase%>.
+      <div>Finally, since <%= individual_data.person.state.name%> is <%= number_with_delimiter(individual_data.person.state.land_area, :delimiter => ',') %> square miles, it would take <%= individual_data.diameter_of_a_circle(individual_data.person_per_sq_miles_math(individual_data.gender_age_and_race_pop)).round(2)%> miles, to meet another <%= individual_data.person.age%>-year-old, <%= individual_data.person.race.name%> <%= individual_data.person.sex.downcase%>.
       </div>
     </p>
     <p>

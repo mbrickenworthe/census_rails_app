@@ -23,22 +23,22 @@ attr_reader :person, :api_front, :api_back, :api_post_key, :key, :api_gender_num
   end
 
   def api_male_number
-    if (person.age + 3).to_s.length == 1
-      number = "00" + (person.age + 3).to_s
-    elsif (person.age + 3).to_s.length == 2
-      number = "0" + (person.age + 3).to_s
+    if (person.age_2010 + 3).to_s.length == 1
+      number = "00" + (person.age_2010 + 3).to_s
+    elsif (person.age_2010 + 3).to_s.length == 2
+      number = "0" + (person.age_2010 + 3).to_s
     else
-      number = (person.age + 3).to_s
+      number = (person.age_2010 + 3).to_s
     end
   end
 
   def api_female_number
-    if (person.age + 7).to_s.length == 1
-      number = "10" + (person.age + 7).to_s
-    elsif (person.age + 7).to_s.length == 2
-      number = "1" + (person.age + 7).to_s
+    if (person.age_2010 + 7).to_s.length == 1
+      number = "10" + (person.age_2010 + 7).to_s
+    elsif (person.age_2010 + 7).to_s.length == 2
+      number = "1" + (person.age_2010 + 7).to_s
     else
-      number = (person.age + 7).to_s
+      number = (person.age_2010 + 7).to_s
     end
   end
 

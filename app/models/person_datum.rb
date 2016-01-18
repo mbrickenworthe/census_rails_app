@@ -11,6 +11,7 @@ class PersonDatum < ActiveRecord::Base
     self.gender_race_pop = parsed_call[1][2]
     self.gender_age_pop   = parsed_call[1][3]
     self.gender_age_and_race_pop = parsed_call[1][4]
+    get_birth_name_frequency
   end
 
 
@@ -31,11 +32,23 @@ class PersonDatum < ActiveRecord::Base
     sqrt * 1609.34
   end
 
-  def update_census_data
+  def update_uniqueness_data
     cencus = CensusCall.new(self.person)
     self.json_hash = cencus.call_data
     set_up
     self
+  end
+
+  def get_birth_name_frequency
+    birth_names = StateBirthName.where(name: person.name, year: person.birth_year, state: person.state)
+    name_frequency = nil
+    if birth_names.first == nil
+    elsif birth_names.first == birth_names.last
+      name_frequency = birth_names.first.frequency
+    else 
+      name_frequency = birth_names.first.frequency + birth_names.last.frequency
+    end
+    self.birth_name_pop = name_frequency
   end
 
 end

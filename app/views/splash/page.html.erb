@@ -22,7 +22,7 @@
       <%end%>
     </div>
       <div class="button">
-      <%= link_to "Add New Famous Person", new_famous_person_path%>
+      <%= link_to "Add New Famous Person", new_famous_person_path, :class => "animsition-link"%>
       </div>
     </div>
   </div>
@@ -43,7 +43,7 @@
       </div>
       <%if signed_in?%>
         <div class="button">
-          <%= link_to "Add Family Member", new_person_path%>
+          <%= link_to "Add Family Member", new_person_path, :class => "animsition-link" %>
         </div>
       <%end%>
   </div>

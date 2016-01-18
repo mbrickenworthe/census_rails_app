@@ -1,33 +1,11 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a uniqueness app that takes into account many different APIs to figure out just how unique an individual really is.
 
-Things you may want to cover:
+The census API, with keys below, is used to in accordance with a user's age, race, and state to understand their uniqueness in the year 2010 per each state.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Using a geolocation gem, I'm able to apply that data directly to a GoogleMaps.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
 
 http://api.census.gov/data/2010/sf1/variables.html
-
-"person_data".* FROM "person_data"  ORDER BY "person_data"."id" DESC LIMIT 1
- => #<PersonDatum id: 11, json_hash: "[[\"PCT0120001\", \"PCT0120002\", \"PCT012A002\", \"PCT01...", state_pop: 3046355, age_pop: nil, gender_pop: 1508319, gender_race_pop: 1370991, gender_age_pop: 21724, gender_age_and_race_pop: 18777, person_id: 11, created_at: "2016-01-12 02:13:07", updated_at: "2016-01-12 02:13:07"> 
