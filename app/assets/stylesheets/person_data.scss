@@ -1,0 +1,28 @@
+// Place all the styles related to the person_data controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// All this is found in the Data Tab.
+/*View page:
+  app/views/person_data
+*/
+
+
+#map {
+  display: block;
+  float: center;
+  border: 5px solid #011627;
+  position: relative;
+  width: 100%;
+}
+
+.circles {
+  border: 5px solid #011627;
+  width: 40%;
+  float: center;
+}
+
+.circles li {
+  list-style-type: none;
+  background-color: #999968;
+}

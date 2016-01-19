@@ -1,0 +1,292 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ * 
+*= require_tree .
+ *= require_tree ../stylesheets/animsition/.
+ *= require_self
+
+ */
+
+/* 
+
+5 colors are:
+  #011627 -- Dark blue
+  #0B3648 -- Blue
+  #3B6058 -- Sea Foam
+  #97A14A -- Green Yellow
+  #7B5E7B -- Lighter Purple
+
+ */
+
+/* 
+The fonts are found or could be put in 
+  vender/assets/fonts
+*/
+@font-face {
+  font-family: 'Amble';
+  font-weight: normal;
+  font-style: normal;
+  src: url('amble.ttf')  format('truetype');
+}
+
+body {
+  font-family: "Amble";
+  background-color: white;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  background-size: 100%;
+    /*margin: 1%;*/
+}
+
+#name {
+  color: ##2E2D2D;
+}
+
+.main-title {
+  text-align: center;
+  margin-bottom: 75px;
+}
+
+h1 {
+  color: #333333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+p:first-child {
+  text-align: center;
+  margin-top: 0px;
+}
+
+p {
+ color: ##2E2D2D;
+ margin: 0px;
+}
+
+h2 {
+ color: ##2E2D2D;
+}
+
+h3 {
+ color: ##2E2D2D;
+}
+
+.nav {
+    background: white;
+    float: center;
+    border-bottom: solid #B0B0B0 1px;
+    width: 100%;
+}
+
+<<<<<<< HEAD:app/assets/stylesheets/application.css
+ .tabs {
+    width: 999999px;
+    margin: 0 auto;
+    display:inline-block;
+
+}
+
+/*.line-separator{
+  height:1px;
+  opacity: .5;
+  background:#B0B0B0;
+  border-bottom:1px solid #B0B0B0;
+  margin-bottom: 50px;
+
+}*/
+
+.individual_tab {
+    margin:0px 5px;
+    float:center;
+    padding:9px 20px;
+    display:inline-block;
+    background: white;
+    border: solid #B0B0B0 1px;
+    font-size:18px;
+    font-weight:600;
+    color: #37948B;
+    text-decoration: none;
+}
+
+/* Link that, thru jQuery, flips the page when you go to the next page.*/
+.animsition-link {
+    text-decoration: none;
+    color: #37948B;
+}
+
+#log_out {
+    text-decoration: none;
+    color: #011627;
+}
+=======
+h1 {
+  color: #011627;
+}
+
+/*These are any links on all the pages.*/
+>>>>>>> origin/master:app/assets/stylesheets/application.scss
+
+.button {
+  color: #37948B;
+  text-decoration: none;
+  margin-bottom: 50px;
+  margin-top:  30px;
+}
+
+.button a {
+  border: 2px solid #37948B;
+  margin: 0 10px 0 0;
+  padding: 15px 45px;
+  line-height: 1.8;
+  text-decoration: none;
+  color: #37948B;
+  background-color: #F2F1ED
+}
+
+a:hover {
+    text-decoration: none;
+    background-color: #37948B;
+    color: #ffffff;
+    border: none;
+    /*font-size: 18px;*/
+    /*padding: 0px;*/
+    /*height: 34px; */
+    /*width: 268px;*/
+    /*padding: 5px;*/
+    /*line-height: 1;*/
+    /*border: 0;*/
+    /*border-radius: 0;*/
+    /*height: 34px;*/
+    /*text-transform: 3s;*/
+}
+
+/* All the dropdown select boxes in the app*/
+
+select {
+  background: transparent;
+  width: 268px;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  border-radius: 0;
+  height: 34px;
+  -webkit-appearance: none;
+}
+
+select {
+  width: 240px;
+  height: 34px;
+  overflow: hidden;
+  background: url(new_arrow.png) no-repeat right #ddd;
+  border: 1px solid #ccc;
+}
+
+/*  I think this is the label for the select boxes */
+
+label {
+  color: #011627;
+}
+
+/*  All the text boxes in all the forms in the app*/
+
+input {
+  padding: 10px;
+  border: solid;
+  border-color: #011627;
+  focus: false;
+  background-color: none;
+}
+
+input[type="submit"] {
+  color: #97A14A;
+  background-color: #011627;
+  padding: 5px;
+  font-size: 18px;
+  margin: 8px;
+
+}
+
+input[type="checkbox"] {
+  background-color: #011627;
+  border: 1px;
+  font-size: 18px;
+  margin: 8px;
+  opacity: 5;
+
+}
+
+/* My attempt at making the right and left collumn on the first page better*/
+
+.right h2{
+  margin: 10px;
+}
+.right h3{
+  margin: 10px;
+}
+.right .picture{
+  margin: 10px;
+}
+.right p{
+  margin: 10px;
+}
+
+
+<<<<<<< HEAD:app/assets/stylesheets/application.css
+=======
+/*   HEADER  SECTION   */
+
+/*These are the individual tabs at the top.*/
+/*This is also things that are in the header
+>>>>>>> origin/master:app/assets/stylesheets/application.scss
+
+  View page:
+
+  app/views/layouts/_header
+
+*/
+
+.tabs {
+    width:100%;
+    display:inline-block;
+}
+
+.individual_tab {
+    margin:0px 5px;
+    float:center;
+    padding:9px 20px;
+    display:inline-block;
+    background: #97A14A;
+    font-size:18px;
+    font-weight:600;
+    color: #011627;
+    text-decoration: none;
+}
+
+/* Link that, thru jQuery, flips the page when you go to the next page.*/
+
+.animsition-link {
+    text-decoration: none;
+    color: #011627;
+}
+
+/* Had to */
+#log_out {
+    text-decoration: none;
+    color: #011627;
+}
+
+
+
+
+

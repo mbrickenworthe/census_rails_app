@@ -6,7 +6,58 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-states = State.create([{name: "Alabama", state_number: "01"}, {name: "Alaska", state_number: "02"}, {name: "Arizona", state_number: "04"}, {name: "Arkansas", state_number: '05'}, {name: "California", state_number: '06'}, {name: "Colorado", state_number: '08'}, {name: "Connecticut", state_number: '09'}, {name: "District of Columbia", state_number: '11', land_area: 61}, {name: "Delaware", state_number: '10'}, {name: "Florida", state_number: '12'}, {name: "Georgia", state_number: '13'}, {name: "Hawaii", state_number: '15'}, {name: "Idaho", state_number: '16'}, {name: "Illinois", state_number: 17}, {name: "Indiana", state_number: 18}, {name: "Iowa", state_number: '19'}, {name: "Kansas", state_number: '20'}, {name: "Kentucky", state_number: '21'}, {name: "Louisiana", state_number: 22}, {name: "Maine", state_number: 23}, {name: "Maryland", state_number: '24'}, {name: "Massachusetts", state_number: '25'}, {name: "Michigan", state_number: '26'}, {name: "Minnesota", state_number: '27'}, {name: "Mississippi", state_number: '28'}, {name: "Missouri", state_number: '29'}, {name: "Montana", state_number: '30'}, {name: "Nebraska", state_number: '31'}, {name: "Nevada", state_number: '32'}, {name: "North Carolina", state_number: '37'}, {name: "North Dakota", state_number: '38'}, {name: "New Hampshire", state_number: '33'}, {name: "New Jersey", state_number: '34'}, {name: "New Mexico", state_number: '35'}, {name: "New York", state_number: '36'}, {name: "Ohio", state_number: '39'}, {name: "Oklahoma", state_number: '40'}, {name: "Oregon", state_number: '41'}, {name: "Pennsylvania", state_number: '42'}, {name: "Rhode Island", state_number: '44'}, {name: "South Carolina", state_number: '45'}, {name: "South Dakota", state_number: '46'}, {name: "Tennessee", state_number: '47'}, {name: "Texas", state_number: '48'}, {name: "Utah", state_number: '49'}, {name: "Virginia", state_number: '51'}, {name: "Vermont", state_number: '50'}, {name: "Washington", state_number: '53'}, {name: "Wisconsin", state_number: '55'}, {name: "West Virginia", state_number: '54'}, {name: "Wyoming", state_number: '56'}])
+states = State.create([
+  {name: "Alabama", state_number: "01", state_abbr: "AL"}, 
+  {name: "Alaska", state_number: "02", state_abbr: "AK"}, 
+  {name: "Arizona", state_number: "04", state_abbr: "AZ"}, 
+  {name: "Arkansas", state_number: '05', state_abbr: "AR"}, 
+  {name: "California", state_number: '06', state_abbr: "CA"}, 
+  {name: "Colorado", state_number: '08', state_abbr: "CO"}, 
+  {name: "Connecticut", state_number: '09', state_abbr: "CT"}, 
+  {name: "District of Columbia", state_number: '11', land_area: 61, state_abbr: "DC"}, 
+  {name: "Delaware", state_number: '10', state_abbr: "DE"}, 
+  {name: "Florida", state_number: '12', state_abbr: "FL"}, 
+  {name: "Georgia", state_number: '13', state_abbr: "GA"}, 
+  {name: "Hawaii", state_number: '15', state_abbr: "HI"}, 
+  {name: "Idaho", state_number: '16', state_abbr: "ID"}, 
+  {name: "Illinois", state_number: 17, state_abbr: "IL"}, 
+  {name: "Indiana", state_number: 18, state_abbr: "IN"}, 
+  {name: "Iowa", state_number: '19', state_abbr: "IA"}, 
+  {name: "Kansas", state_number: '20', state_abbr: "KS"}, 
+  {name: "Kentucky", state_number: '21', state_abbr: "KY"}, 
+  {name: "Louisiana", state_number: 22, state_abbr: "LA"}, 
+  {name: "Maine", state_number: 23, state_abbr: "ME"}, 
+  {name: "Maryland", state_number: '24', state_abbr: "MD"}, 
+  {name: "Massachusetts", state_number: '25', state_abbr: "MA"}, 
+  {name: "Michigan", state_number: '26', state_abbr: "MI"}, 
+  {name: "Minnesota", state_number: '27', state_abbr: "MN"}, 
+  {name: "Mississippi", state_number: '28', state_abbr: "MS"}, 
+  {name: "Missouri", state_number: '29', state_abbr: "MO"}, 
+  {name: "Montana", state_number: '30', state_abbr: "MT"}, 
+  {name: "Nebraska", state_number: '31', state_abbr: "NE"}, 
+  {name: "Nevada", state_number: '32', state_abbr: "NV"}, 
+  {name: "North Carolina", state_number: '37', state_abbr: "NC"}, 
+  {name: "North Dakota", state_number: '38', state_abbr: "ND"}, 
+  {name: "New Hampshire", state_number: '33', state_abbr: "NH"}, 
+  {name: "New Jersey", state_number: '34', state_abbr: "NJ"}, 
+  {name: "New Mexico", state_number: '35', state_abbr: "NM"}, 
+  {name: "New York", state_number: '36', state_abbr: "NY"}, 
+  {name: "Ohio", state_number: '39', state_abbr: "OH"}, 
+  {name: "Oklahoma", state_number: '40', state_abbr: "OK"}, 
+  {name: "Oregon", state_number: '41', state_abbr: "OR"}, 
+  {name: "Pennsylvania", state_number: '42', state_abbr: "PA"}, 
+  {name: "Rhode Island", state_number: '44', state_abbr: "RI"}, 
+  {name: "South Carolina", state_number: '45', state_abbr: "SC"}, 
+  {name: "South Dakota", state_number: '46', state_abbr: "SD"}, 
+  {name: "Tennessee", state_number: '47', state_abbr: "TN"}, 
+  {name: "Texas", state_number: '48', state_abbr: "TX"}, 
+  {name: "Utah", state_number: '49', state_abbr: "UT"}, 
+  {name: "Virginia", state_number: '51', state_abbr: "VA"}, 
+  {name: "Vermont", state_number: '50', state_abbr: "VT"}, 
+  {name: "Washington", state_number: '53', state_abbr: "WA"}, 
+  {name: "Wisconsin", state_number: '55', state_abbr: "WI"}, 
+  {name: "West Virginia", state_number: '54', state_abbr: "WV"}, 
+  {name: "Wyoming", state_number: '56', state_abbr: "WY"}])
 
 races = Race.create([{name: "white", race_letter: "A"}, {name: "black", race_letter: "B"}, {name: "American Indian", race_letter: "C"}, {name: "Asian", race_letter: "D"}, {name: "Pacific Islander", race_letter: "E"}, {name: "Hispanic/Latino", race_letter: "H"}, {name: "another race", race_letter: "F"}, {name: "two or more races", race_letter: "G"}])
 
@@ -43,4 +94,18 @@ def fill_in_state_land_area
   end  
 end
 
+def get_birth_names
+  states = State.all
+
+  Dir.chdir(File.dirname("/Users/awinters/Downloads/namesbystate/AK.TXT"))
+  states.each do |state|
+    file = File.open("/Users/awinters/Downloads/namesbystate/#{state.state_abbr}.TXT")
+    file.each_line do |line|
+     split_line = line.split(",")
+      birth_data = StateBirthName.create(year: split_line[2].to_i, name: split_line[3], frequency: split_line[4].to_i, state: state, sex: split_line[1])
+    end
+  end
+end
+
+get_birth_names
 fill_in_state_land_area

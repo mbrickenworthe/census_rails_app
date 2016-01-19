@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sex: MyString
+  year: 1
+  name: MyString
+  frequency: 1
+
+two:
+  sex: MyString
+  year: 1
+  name: MyString
+  frequency: 1

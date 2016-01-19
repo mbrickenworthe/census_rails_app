@@ -19,8 +19,8 @@ module FinalRailsProject
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    config.serve_static_assets = true
-    config.assets.precompile += %w( splash.css splash.js people.js google_maps.js) 
+    config.serve_static_files = true
+    config.assets.precompile += %w( splash.js people.js google_maps.js) 
     config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
     
     # Do not swallow errors in after_commit/after_rollback callbacks.

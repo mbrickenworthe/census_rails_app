@@ -12,7 +12,7 @@
         <img alt="Edit" height="24" src="/assets/photos/pencil.png" width="24" />
       </a>
       <%if !(person.active_user)%>
-        <%= link_to image_tag(@delete_image, size: "24x24", alt: "Delete"), delete_person_path(person), method: :delete, :class => "animsition-link"  %>
+        <%= link_to image_tag(@delete_image, size: "24x24", alt: "Delete"), delete_person_path(person), method: :delete  %>
       <%end%>
     </div>
   <%end%></ul>

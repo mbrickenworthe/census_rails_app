@@ -14,11 +14,11 @@ class Person < ActiveRecord::Base
  validates_presence_of :name, :age, :city
  validates :name, length: {minimum: 2}
  validates :city, length: {minimum: 3}
- validates :age, numericality: {greater_than_or_equal_to: 0, less_than: 105 }
+ validates :age, numericality: {greater_than_or_equal_to: 5, less_than: 110 }
 
   geocoded_by :address_string
   after_validation :geocode
-  after_create :add_default_pic
+  after_create :add_default_pic, :person_year, :age_in_2010
 
   def address_string
     "#{self.city}, #{self.state.name}"
@@ -35,6 +35,14 @@ class Person < ActiveRecord::Base
   def add_default_pic
     @photo ||= File.open('public/assets/photos/default.jpg')
     self.photo_file_name == nil ? self.update_attributes(photo: @photo) : self.photo
+  end
+
+  def person_year
+    self.update_attributes(birth_year: (Time.now.year - (self.age + 1)))
+  end
+
+  def age_in_2010
+    self.update_attributes(age_2010: (self.age - 5))
   end
 
 end

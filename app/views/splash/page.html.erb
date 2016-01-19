@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <% content_for :page_styles do %>
   <%= stylesheet_link_tag    'splash', media: 'all', 'data-turbolinks-track' => true %>
 <%end%>
@@ -8,6 +9,11 @@
 <div class="main-title">
 <h1>Welcome to the <div id="name">Amazing Census Data Rails App</div></h1>
   <p><%if !(signed_in?)%> Please Log In Using the Link Above to Add Your Family Members and See Your Census Data!</p>
+=======
+<h2>Welcome to the Amazing</h2><h1>Uniqueness App</h1><h3>How unique are you?</h3>
+
+<p><%if !(signed_in?)%> Please Log In Using the Link Above to Add Your Family Members and See Your Census Data!</p>
+>>>>>>> origin/master
 <%end%>
 
 <% if signed_in? && created_first_admin %>
@@ -32,6 +38,12 @@
         <p><strong>Location:  </strong><%= person.address_string%></p>
       <%end%>
     </div>
+<<<<<<< HEAD
+=======
+      <div class="button">
+      <%= link_to "Add New Famous Person", new_famous_person_path, :class => "animsition-link"%>
+      </div>
+>>>>>>> origin/master
     </div>
   </div>
   <div class="right">
@@ -51,7 +63,7 @@
       </div>
       <%if signed_in?%>
         <div class="button">
-          <%= link_to "Add Family Member", new_person_path%>
+          <%= link_to "Add Family Member", new_person_path, :class => "animsition-link" %>
         </div>
       <%end%>
   </div>
