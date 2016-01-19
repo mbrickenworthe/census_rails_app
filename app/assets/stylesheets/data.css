@@ -2,6 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*View page:
+  app/views/person_data
+*/
+
+
 .data_person {
   background: white;
+}
+
+#map {
+  display: block;
+  float: center;
+  border: 5px solid #011627;
+  position: relative;
+  width: 100%;
+}
+
+.circles {
+  border: 5px solid #011627;
+  width: 40%;
+  float: center;
 }
