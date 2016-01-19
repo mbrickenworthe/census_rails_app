@@ -36,51 +36,87 @@
 
 body {
   font-family: "Amble";
-  background-color: #3B6058;
-  margin: 1%;
+  background-color: white;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  background-size: 100%;
+    /*margin: 1%;*/
 }
 
-p {
- color: #011627;
+#name {
+  color: ##2E2D2D;
 }
 
-h2 {
- color: #011627;
-}
-
-h3 {
- color: #011627;
-}
-
-.header {
-    background: #011627;
-    float: center;
-}
-
- .tabs {
-    width:100%;
-    display:inline-block;
+.main-title {
+  text-align: center;
+  margin-bottom: 75px;
 }
 
 h1 {
-  color: #011627;
+  color: #333333;
+  text-align: center;
+  margin-bottom: 10px;
 }
+
+p:first-child {
+  text-align: center;
+  margin-top: 0px;
+}
+
+p {
+ color: ##2E2D2D;
+ margin: 0px;
+}
+
+h2 {
+ color: ##2E2D2D;
+}
+
+h3 {
+ color: ##2E2D2D;
+}
+
+.nav {
+    background: white;
+    float: center;
+    border-bottom: solid #B0B0B0 1px;
+    width: 100%;
+}
+
+ .tabs {
+    width: 999999px;
+    margin: 0 auto;
+    display:inline-block;
+
+}
+
+/*.line-separator{
+  height:1px;
+  opacity: .5;
+  background:#B0B0B0;
+  border-bottom:1px solid #B0B0B0;
+  margin-bottom: 50px;
+
+}*/
 
 .individual_tab {
     margin:0px 5px;
     float:center;
     padding:9px 20px;
     display:inline-block;
-    background: #97A14A;
+    background: white;
+    border: solid #B0B0B0 1px;
     font-size:18px;
     font-weight:600;
-    color: #011627;
+    color: #37948B;
     text-decoration: none;
 }
+
 /* Link that, thru jQuery, flips the page when you go to the next page.*/
 .animsition-link {
     text-decoration: none;
-    color: #011627;
+    color: #37948B;
 }
 
 #log_out {
@@ -88,26 +124,38 @@ h1 {
     color: #011627;
 }
 
-.button a {
-  border: 2px solid #011627;
+.button {
+  color: #37948B;
   text-decoration: none;
-  color: #97A14A;
-  background-color: #011627
+  margin-bottom: 50px;
+  margin-top:  30px;
+}
+
+.button a {
+  border: 2px solid #37948B;
+  margin: 0 10px 0 0;
+  padding: 15px 45px;
+  line-height: 1.8;
+  text-decoration: none;
+  color: #37948B;
+  background-color: #F2F1ED
 }
 
 a:hover {
     text-decoration: none;
-    color: #0B3648;
-    font-size: 26px;
-    padding: 0px;
-    height: 34px; 
-    width: 268px;
-    padding: 5px;
-    line-height: 1;
-    border: 0;
-    border-radius: 0;
-    height: 34px;
-    text-transform: 3s;
+    background-color: #37948B;
+    color: #ffffff;
+    border: none;
+    /*font-size: 18px;*/
+    /*padding: 0px;*/
+    /*height: 34px; */
+    /*width: 268px;*/
+    /*padding: 5px;*/
+    /*line-height: 1;*/
+    /*border: 0;*/
+    /*border-radius: 0;*/
+    /*height: 34px;*/
+    /*text-transform: 3s;*/
 }
 label {
   color: #011627;
@@ -124,7 +172,7 @@ input {
   border: solid;
   border-color: #011627;
   focus: false;
-  background-color: #97A14A;
+  background-color: none;
 }
 
 input[type="submit"] {
@@ -178,11 +226,6 @@ select {
     display:inline-block;
     background:#5F9F9F;
   }
-
-.button {
-  color: #0B3648;
-  text-decoration: none;
-}
 
 
 #map {

@@ -2,8 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+#name {
+  font-color: #37948B;
+}
 .people {
-  color: green;
+  color: yellow;
   text-decoration: none;
 }
 
@@ -14,27 +18,37 @@
 
 .person h3 {
   font-size: 30px;
-  background-color: blue;
+  background-color: white;
   margin:0px 0px;
   float:center;
   padding:9px 20px;
   display:inline-block;
 }
 
+.picture {
+  margin-bottom: 20px;
+}
+
 .main_canvas {
-    background: #B22222;
+    background: white;
+    border: #333333 solid 1px;
+    margin-left: 45px;
     cursor: pointer;
     float: center;
     margin-right: 55%;
 }
 
 .left {
-    background-color: #97A14A;
+    background-color: #F2F1ED;
     float: left;
     width: 45%;
+    padding-left: 30px;
+    margin-left: 45px;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .right {
-    background-color: #97A14A;
+    background-color: #F2F1ED;
     margin-left: 55%;
 }
