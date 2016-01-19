@@ -49,7 +49,7 @@ body {
 }
 
 #name {
-  color: ##2E2D2D;
+  color: #2E2D2D;
 }
 
 .main-title {
@@ -69,16 +69,16 @@ p:first-child {
 }
 
 p {
- color: ##2E2D2D;
+ color: #2E2D2D;
  margin: 0px;
 }
 
 h2 {
- color: ##2E2D2D;
+ color: #2E2D2D;
 }
 
 h3 {
- color: ##2E2D2D;
+ color: #2E2D2D;
 }
 
 .nav {
@@ -88,7 +88,6 @@ h3 {
     width: 100%;
 }
 
-<<<<<<< HEAD:app/assets/stylesheets/application.css
  .tabs {
     width: 999999px;
     margin: 0 auto;
@@ -128,22 +127,16 @@ h3 {
     text-decoration: none;
     color: #011627;
 }
-=======
-h1 {
-  color: #011627;
-}
 
 /*These are any links on all the pages.*/
->>>>>>> origin/master:app/assets/stylesheets/application.scss
+
 
 .button {
   color: #37948B;
   text-decoration: none;
   margin-bottom: 50px;
   margin-top:  30px;
-}
 
-.button a {
   border: 2px solid #37948B;
   margin: 0 10px 0 0;
   padding: 15px 45px;
@@ -242,13 +235,12 @@ input[type="checkbox"] {
 }
 
 
-<<<<<<< HEAD:app/assets/stylesheets/application.css
-=======
+
 /*   HEADER  SECTION   */
 
 /*These are the individual tabs at the top.*/
 /*This is also things that are in the header
->>>>>>> origin/master:app/assets/stylesheets/application.scss
+
 
   View page:
 
@@ -256,7 +248,7 @@ input[type="checkbox"] {
 
 */
 
-.tabs {
+/*.tabs {
     width:100%;
     display:inline-block;
 }
@@ -275,17 +267,16 @@ input[type="checkbox"] {
 
 /* Link that, thru jQuery, flips the page when you go to the next page.*/
 
-.animsition-link {
+/*.animsition-link {
     text-decoration: none;
     color: #011627;
 }
 
-/* Had to */
+ Had to 
 #log_out {
     text-decoration: none;
     color: #011627;
-}
-
+}*/
 
 
 
