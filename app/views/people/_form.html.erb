@@ -35,7 +35,7 @@
   <div>
     <%= f.label :race%>
     <div class="select">
-      <%= f.collection_select(:race_id, Race.all, :id, :name) %>
+      <%= f.collection_select(:race_id, Race.order(:name), :id, :name) %>
     </div>
   </div>
   <div>
@@ -45,7 +45,7 @@
   <div>
     <%= f.label :state%>
     <div class="select">
-      <%= f.collection_select(:state_id, State.all, :id, :name) %>
+      <%= f.collection_select(:state_id, State.order(:name), :id, :name) %>
     </div>
   </div>
   <div class="">

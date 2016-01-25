@@ -18,8 +18,8 @@ attr_reader :person, :api_front, :api_back, :api_post_key, :key, :api_gender_num
     end
   end
 
-  def call_data
-    make_call
+  def get_parsed_census_numbers
+    get_census_call_info
   end
 
   def api_male_number
@@ -54,7 +54,7 @@ attr_reader :person, :api_front, :api_back, :api_post_key, :key, :api_gender_num
     total_age_population
   end
 
-  def make_call
+  def get_census_call_info
     call = RestClient.get(make_string)
     parsed_call = JSON.parse(call)
   end
@@ -62,7 +62,6 @@ attr_reader :person, :api_front, :api_back, :api_post_key, :key, :api_gender_num
   def total_gender_population
     ',PCT0120' + api_gender_number
   end
-
 
   def total_age_population
     ',PCT0120' + api_male_number + ',PCT0120' + api_female_number

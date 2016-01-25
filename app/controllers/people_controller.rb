@@ -30,7 +30,7 @@ before_action :authenticate_user!, except: [:famous_new, :create]
         @person.update_attributes(user: nil)
       end
       census = CensusCall.new(@person)
-      PersonDatum.create(json_hash: census.call_data, person: @person)
+      PersonDatum.create(json_hash: census.get_parsed_census_numbers, person: @person)
       redirect_to root_path
     else
       render 'new'

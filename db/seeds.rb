@@ -70,9 +70,9 @@ michele = Person.create(name: "Michele", age: 59, race: Race.find_by(name: "whit
 
 
 census = CensusCall.new(michele)
-PersonDatum.create(json_hash: census.call_data, person: michele)
+PersonDatum.create(json_hash: census.get_parsed_census_numbers, person: michele)
 census2 = CensusCall.new(aziz)
-PersonDatum.create(json_hash: census2.call_data, person: aziz)
+PersonDatum.create(json_hash: census2.get_parsed_census_numbers, person: aziz)
 
 # These lines of code are using Nokogiri to add the land_area to each of the states cause I didn't want to do it by hand.
 
@@ -94,18 +94,5 @@ def fill_in_state_land_area
   end  
 end
 
-def get_birth_names
-  states = State.all
-
-  Dir.chdir(File.dirname("/Users/awinters/Downloads/namesbystate/AK.TXT"))
-  states.each do |state|
-    file = File.open("/Users/awinters/Downloads/namesbystate/#{state.state_abbr}.TXT")
-    file.each_line do |line|
-     split_line = line.split(",")
-      birth_data = StateBirthName.create(year: split_line[2].to_i, name: split_line[3], frequency: split_line[4].to_i, state: state, sex: split_line[1])
-    end
-  end
-end
-
-get_birth_names
 fill_in_state_land_area
+puts "Done with the seeds file, now run -- rake seed_birth_name_info to finish seeding all the necessary information!"

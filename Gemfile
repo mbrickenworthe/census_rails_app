@@ -24,6 +24,8 @@ gem 'bootstrap-sass', '~> 3.3.5'
 
 gem 'paperclip', '~> 4.3'
 
+gem 'activerecord-import',  '~> 0.4.0'
+
 
 # This gem is so that I can have environment variables and be able to use them with my API
 # the other code for this is stored in config/application.rb

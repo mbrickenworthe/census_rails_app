@@ -34,7 +34,7 @@ class PersonDatum < ActiveRecord::Base
 
   def update_uniqueness_data
     cencus = CensusCall.new(self.person)
-    self.json_hash = cencus.call_data
+    self.json_hash = cencus.get_parsed_census_numbers
     set_up
     self
   end
