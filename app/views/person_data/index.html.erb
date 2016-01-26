@@ -83,6 +83,9 @@
   <li>
     The <span style="color: #551A8B" font-weight:bold>PURPLE</span> circle is the gender uniqueness.
   </li>
+  <li>
+    The <span style="color: #7FFF00" font-weight:bold>BRIGHT GREEN</span> circle is the age and name uniqueness.
+  </li>
 </ul>
 <div style='width: 800px;'>
   <div id="map" style='width: 800px; height: 400px;'></div>
@@ -100,6 +103,7 @@
     var circle_two = <%=raw @circle_two.to_json%>;
     var circle_three = <%=raw @circle_three.to_json%>;
     var circle_four = <%=raw @circle_four.to_json%>;
+    var birth_name_circle = <%=raw @birth_name_circle.to_json%>;
     var search = {query: ['bar']};
     console.log("I'm in the else");
   </script>

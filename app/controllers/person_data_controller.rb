@@ -10,6 +10,7 @@ class PersonDataController < ApplicationController
     @circle_two = {}
     @circle_three = {}
     @circle_four = {}
+    @birth_name_circle = {}
     @current_user_person_object = Person.where(user: current_user, active_user: true).first
     @person_data_map_data.each do |personal_data|
       @google_hash[(personal_data.person.name)] = GoogleMapsInfoHelper.new(personal_data).final_hash
@@ -17,6 +18,7 @@ class PersonDataController < ApplicationController
       @circle_two[(personal_data.person.name)] = GoogleMapsInfoHelper.new(personal_data).circle_hash_two
       @circle_three[(personal_data.person.name)] = GoogleMapsInfoHelper.new(personal_data).circle_hash_three
       @circle_four[(personal_data.person.name)] = GoogleMapsInfoHelper.new(personal_data).circle_hash_four
+      @birth_name_circle[(personal_data.person.name)] = GoogleMapsInfoHelper.new(personal_data).person_name_hash
     end
   end
 
@@ -30,6 +32,7 @@ class PersonDataController < ApplicationController
     @circle_two = {}
     @circle_three = {}
     @circle_four = {}
+    @birth_name_circle = {}
     @current_user_person_object = Person.where(user: current_user, active_user: true).first
     @person_data_map_data.each do |personal_data|
       @google_hash[(personal_data.person.name)] = GoogleMapsInfoHelper.new(personal_data).final_hash
@@ -37,6 +40,7 @@ class PersonDataController < ApplicationController
       @circle_two[(personal_data.person.name)] = GoogleMapsInfoHelper.new(personal_data).circle_hash_two
       @circle_three[(personal_data.person.name)] = GoogleMapsInfoHelper.new(personal_data).circle_hash_three
       @circle_four[(personal_data.person.name)] = GoogleMapsInfoHelper.new(personal_data).circle_hash_four
+      @birth_name_circle[(personal_data.person.name)] = GoogleMapsInfoHelper.new(personal_data).person_name_hash
     end
     @search = {}
     if params[:google_query] == nil

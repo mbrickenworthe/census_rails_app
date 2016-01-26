@@ -1,6 +1,6 @@
 class GoogleMapsInfoHelper
 
-  attr_accessor :final_hash, :circle_hash_one, :circle_hash_two, :circle_hash_three, :circle_hash_four
+  attr_accessor :final_hash, :circle_hash_one, :circle_hash_two, :circle_hash_three, :circle_hash_four, :person_name_hash
   attr_reader :person, :person_data_object
 
   def initialize(person_data_object)
@@ -11,6 +11,7 @@ class GoogleMapsInfoHelper
     @circle_hash_two = {}
     @circle_hash_three = {}
     @circle_hash_four = {}
+    @person_name_hash = {}
     build_all_hashes
   end
 
@@ -20,6 +21,7 @@ class GoogleMapsInfoHelper
     build_circle_hash_two
     build_circle_hash_three
     build_circle_hash_four
+    build_person_name_hash
   end
 
   def build_hash
@@ -52,6 +54,16 @@ class GoogleMapsInfoHelper
     @circle_hash_four[:api_radius] = person_data_object.radius_of_a_circle_in_meters(person_data_object.person_per_sq_miles_math(person_data_object.age_pop))
     @circle_hash_four[:circle_color] = "#236B8E"
     @circle_hash_four[:marker_location] = coordinates
+  end
+
+  def build_person_name_hash
+    if person_data_object.birth_name_pop == nil
+      @person_name_hash[:api_radius] = person_data_object.radius_of_a_circle_in_meters(person_data_object.person.state.land_area)
+    else
+      @person_name_hash[:api_radius] = person_data_object.radius_of_a_circle_in_meters(person_data_object.person_per_sq_miles_math(person_data_object.birth_name_pop))
+    end
+    @person_name_hash[:circle_color] = "#7FFF00"
+    @person_name_hash[:marker_location] = coordinates
   end
 
   def coordinates

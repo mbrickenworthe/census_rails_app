@@ -35,6 +35,7 @@ function initMap() {
   addSmallerCirclesToMap(circle_two, map);
   addSmallerCirclesToMap(circle_three, map);
   addSmallerCirclesToMap(circle_four, map);
+  addSmallerCirclesToMap(birth_name_circle, map);
 }
 
 function addBarsToMap(hash, map, search_query){
