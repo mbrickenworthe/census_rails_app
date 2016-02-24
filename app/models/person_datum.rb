@@ -40,7 +40,7 @@ class PersonDatum < ActiveRecord::Base
   end
 
   def get_birth_name_frequency
-    birth_names = StateBirthName.where(name: person.name, year: person.birth_year, state: person.state)
+    birth_names = StateBirthName.where(name: person.name, year: person.birth_year, state_abbr: person.state.state_abbr)
     name_frequency = nil
     if birth_names.first == nil
     elsif birth_names.first == birth_names.last
